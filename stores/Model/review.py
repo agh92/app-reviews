@@ -12,15 +12,7 @@ class Review:
         self.author = author
 
     def to_json(self):
-        return json.dumps({
-            'app_id': self.app_id,
-            'review_id': self.id,
-            'author': self.author,
-            'date': self.date,
-            'stars': self.stars,
-            'title': self.title,
-            'body': self.body
-        })
+        return json.dumps(self.__dict__)
 
 
 class GooglePlayReview(Review):
