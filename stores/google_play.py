@@ -4,8 +4,8 @@ import time
 import requests
 from pyquery import PyQuery as pq
 
-from stores import apple_country_codes
-from stores.Model.review import Review
+from stores import country_codes, google_play_delay
+from stores.Model.review import GooglePlayReview
 from lxml.etree import tostring
 
 # this reviews_resource have been exposed by several github projects
@@ -24,7 +24,7 @@ _review_api_data = {
 def reviews(app_id, country_code=None):
     _review_api_data['id'] = app_id
     r = []
-    codes = apple_country_codes.keys() if country_code is None else [country_code]
+    codes = country_codes.keys() if country_code is None else [country_code]
     for code in codes:
         _review_api_data['hl'] = code
         do = True
@@ -32,7 +32,7 @@ def reviews(app_id, country_code=None):
             print('Request reviews for page ', _review_api_data['pageNum'])
             response = requests.post(_reviews_resource, data=_review_api_data)
             body = response.text[6:]  # the first 6 characters of the response make the json invalid
-            print(body)
+            # print(body)
             # encode utf8 for possible emojies
             reviews_str = json.loads(body)[0][2].strip().encode(
                 'utf-8')  # the body contains a list with in a list -> xml/html format
@@ -43,8 +43,9 @@ def reviews(app_id, country_code=None):
                 _review_api_data['pageNum'] += 1
             else:  # if the string is empty there are no more reviews to process
                 do = False
-            time.sleep(0.5)  # don´t let google block us
+            time.sleep(google_play_delay[0])  # don´t let google block us
         _review_api_data['pageNum'] = 0
+        time.sleep(google_play_delay[1])
     return r
 
 
@@ -61,11 +62,11 @@ def _parse_review(div, app_id):
     review_body = div('div.review-body').eq(0)
     title = review_body('span.review-title').text()  # div.review-body with-review-wrapper span.review-title text
     body = review_body.text()  # div.review-body with-review-wrapper text
-    return Review(app_id=app_id,
-                  review_id=review_id,
-                  author=author,
-                  date=date,
-                  perma_link=perma_link,
-                  stars=stars,
-                  title=title,
-                  body=body)
+    return GooglePlayReview(app_id=app_id,
+                            review_id=review_id,
+                            author=author,
+                            date=date,
+                            perma_link=perma_link,
+                            stars=stars,
+                            title=title,
+                            body=body)

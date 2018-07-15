@@ -1,5 +1,5 @@
 # thanks to https://gist.github.com/daFish/5990634
-apple_country_codes = {
+country_codes = {
     'ae': 'United Arab Emirates',
     'ag': 'Antigua and Barbuda',
     'ai': 'Anguilla',
@@ -156,3 +156,7 @@ apple_country_codes = {
     'za': 'South Africa',
     'zw': 'Zimbabwe'
 }
+
+# delay between pages and delay between country codes in sec
+# this values are based on experience
+google_play_delay = (1, 10)

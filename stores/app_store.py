@@ -1,7 +1,7 @@
 import requests
 from lxml import etree
 
-from . import apple_country_codes
+from . import country_codes
 from .Model.review import AppStoreReview
 
 # an other posible source:
@@ -19,7 +19,7 @@ def reviews(app_id, country_code=None):
     :return:
     """
     r = []
-    codes = apple_country_codes.keys() if country_code is None else [country_code]
+    codes = country_codes.keys() if country_code is None else [country_code]
     for code in codes:
         received = 1
         page = 1
