@@ -48,6 +48,7 @@ def _reviews(url):
         app_id = itunes_entry.find('{' + std_namespace + '}id').get('{'+im_namespace+'}id')
     for child in iter_child:
         if first:
+            #TODO firstone ist showing up
             next(iter_child)
             first = False
         parsed_review = _parse_review(child)
@@ -76,6 +77,7 @@ def _parse_review(entry, std_namespace='http://www.w3.org/2005/Atom', im_namespa
     version = entry.find('{' + im_namespace + '}version')  # version <im:version> text
     if version is not None:
         version = version.xpath("string()")
+    #TODO optimise just one find until name tag
     author = entry.find('{' + std_namespace + '}author')  # author_name <author><name> text
     author_name = None
     if author is not None:
