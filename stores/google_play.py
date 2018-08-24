@@ -4,7 +4,7 @@ import time
 import requests
 from pyquery import PyQuery as pq
 
-from stores import country_codes, request_delay
+from stores import country_codes
 from stores.Model.review import GooglePlayReview
 from lxml.etree import tostring
 

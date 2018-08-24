@@ -5,7 +5,6 @@ from lxml import etree
 
 from . import country_codes
 from .Model.review import AppStoreReview
-from . import request_delay
 
 # an other posible source:
 # - http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
