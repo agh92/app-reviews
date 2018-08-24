@@ -46,7 +46,7 @@ def raw_reviews(app_id, delay=0, country_code=None):
                 if VERBOSE:
                     print('Page: ', _review_api_data['pageNum'], ' len ', str(len(reviews_str)))
                 if len(reviews_str):
-                    r.append(response.text)
+                    r.append((response.text, response.content))
             except:
                 if body.find(_warning_msg) != -1:
                     raise GooglePlayExceoption('Ip blocked by Google')
@@ -54,39 +54,17 @@ def raw_reviews(app_id, delay=0, country_code=None):
             time.sleep(delay)
     return r
 
+
 def reviews(app_id, delay=0, country_code=None, parsing_fn=None):
     if parsing_fn is None:
         parsing_fn = _parse_review
-
-    _review_api_data = _default_request_data(app_id)
     r = []
-    for code in _get(country_code):
-        _review_api_data['hl'] = code
-        _review_api_data['pageNum'] = 0
-        reviews_str = "1"
-        if VERBOSE:
-            print('Country ', _review_api_data['hl'])
-        while len(reviews_str):
-            response = requests.post(_reviews_resource, data=_review_api_data)
-            body = response.text[6:]  # the first 6 characters of the response make the json invalid
-            # the body contains a list with in a list -> xml/html format - encode utf8 -> emojies
-            try:
-                # if the string is empty there are no more reviews to process
-                reviews_str = json.loads(body)[0][2].strip().encode('utf-8')
-                if len(reviews_str):
-                    divs = pq(reviews_str)('div.single-review')
-                    rx = [parsing_fn(tostring(div), app_id) for div in divs if len(div)]
-                    print('Page ', _review_api_data['pageNum'], ' :', len(rx))
-                    r.extend(rx)
-                    _review_api_data['pageNum'] += 1
-            except json.decoder.JSONDecodeError as e:  # Google Probably blocked us
-                if body.find(_warning_msg) != -1:
-                    raise GooglePlayExceoption('Ip blocked by Google')
-                else:
-                    print('Error with code ', code)
-                break
-            time.sleep(delay)  # don´t let google block us
-        time.sleep(delay)
+    for raw_review in raw_reviews(app_id, delay, country_code):
+        body = raw_review[0][6:]  # the first 6 characters of the response make the json invalid
+        reviews_str = json.loads(body)[0][2].strip().encode('utf-8')
+        divs = pq(reviews_str)('div.single-review')
+        rx = [parsing_fn(tostring(div), app_id) for div in divs if len(div)]
+        r.extend(rx)
     return r
 
 

@@ -31,7 +31,7 @@ def raw_reviews(app_id, country_code=None):
                 print('Page ', page, ' len ', str(received))
             page += 1
             if received > 0:
-                r.append(resp.text)
+                r.append((resp.text, resp.content))
     return r
 
 
@@ -43,24 +43,8 @@ def reviews(app_id, country_code=None, delay=0, parsing_fn=None):
     :return:
     """
     r = []
-    for code in _get(country_code):
-        received = 1
-        page = 1
-        if VERBOSE:
-            print('Country ', code)
-        while received > 0:
-            url = _resource.format(code, page, app_id)  # , 'mostRecent'
-            try:
-                rx = _reviews(url, parsing_fn)
-                if VERBOSE:
-                    print('Page ', page, ' :', len(rx))
-                r.extend(rx)
-                received = len(rx)
-                page += 1
-                time.sleep(delay)
-            except:
-                break
-        time.sleep(delay)
+    for raw_review in raw_reviews(app_id, country_code):
+        r.extend(_reviews(raw_review[1], parsing_fn))
     return r
 
 
@@ -73,11 +57,11 @@ def _get(country_code):
         return country_codes.keys()
 
 
-def _reviews(url, parsing_fn=None):
+def _reviews(content, parsing_fn=None):
     if parsing_fn is None:
         parsing_fn = _parse_review
 
-    tree = etree.fromstring(requests.post(url).content)
+    tree = etree.fromstring(content)
     std_namespace = tree.nsmap[None]
     im_namespace = tree.nsmap['im']
     r = []
