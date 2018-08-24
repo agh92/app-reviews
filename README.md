@@ -16,6 +16,7 @@ Want to contribute? :clap: Just fork and make a PR :thumbsup:
 Open to suggestions
 
 - [ ] Documentation
+- [ ] Tests
 - [ ] Examples
 - [ ] Get App Info
 - [ ] Get Developer Info
@@ -27,4 +28,4 @@ The functionality of this module is dependent of the existence and the
 format as today (15.07.2018) form the following services:
 
 - RSS feed from Apple feedback: https://itunes.apple.com/{contry_code}/rss/customerreviews/page={page_num}/id={itunes_id}/json
-- https://play.google.com/store/getreviews
+- Google Play Store GetReviews: https://play.google.com/store/getreviews

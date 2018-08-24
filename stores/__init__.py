@@ -156,7 +156,3 @@ country_codes = {
     'za': 'South Africa',
     'zw': 'Zimbabwe'
 }
-
-# delay between pages and delay between country codes in sec
-# this values are based on experience
-google_play_delay = (1, 10)
