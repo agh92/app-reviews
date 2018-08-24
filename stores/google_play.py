@@ -4,7 +4,7 @@ import time
 import requests
 from pyquery import PyQuery as pq
 
-from stores import country_codes
+from stores import country_codes, VERBOSE
 from stores.Model.review import GooglePlayReview
 from lxml.etree import tostring
 
@@ -13,11 +13,8 @@ _warning_msg = 'Our systems have detected unusual traffic from your computer net
 _reviews_resource = 'https://play.google.com/store/getreviews'
 
 
-def reviews(app_id, delay=0, country_code=None, parsing_fn=None):
-    if parsing_fn is None:
-        parsing_fn = _parse_review
-
-    _review_api_data = {
+def _default_request_data(app_id):
+    return {
         'pageNum': 0,
         'id': app_id,
         'reviewSortOrder': 0,
@@ -25,11 +22,50 @@ def reviews(app_id, delay=0, country_code=None, parsing_fn=None):
         'reviewType': 0,
         'xhr': 1
     }
+
+
+def raw_reviews(app_id, delay=0, country_code=None):
+    if VERBOSE:
+        print('Id: ', app_id)
+    r = []
+    _review_api_data = _default_request_data(app_id)
+    for code in _get(country_code):
+        _review_api_data['hl'] = code
+        _review_api_data['pageNum'] = 0
+        reviews_str = "1"
+        if VERBOSE:
+            print('Country ', _review_api_data['hl'])
+        while len(reviews_str):
+            response = requests.post(_reviews_resource, data=_review_api_data)
+            body = response.text[6:]  # the first 6 characters of the response make the json invalid
+            # the body contains a list with in a list -> xml/html format - encode utf8 -> emojies
+            try:
+                # if the string is empty there are no more reviews to process
+                reviews_str = json.loads(body)[0][2].strip().encode('utf-8')
+                _review_api_data['pageNum'] += 1
+                if VERBOSE:
+                    print('Page: ', _review_api_data['pageNum'], ' len ', str(len(reviews_str)))
+                if len(reviews_str):
+                    r.append(response.text)
+            except:
+                if body.find(_warning_msg) != -1:
+                    raise GooglePlayExceoption('Ip blocked by Google')
+                raise
+            time.sleep(delay)
+    return r
+
+def reviews(app_id, delay=0, country_code=None, parsing_fn=None):
+    if parsing_fn is None:
+        parsing_fn = _parse_review
+
+    _review_api_data = _default_request_data(app_id)
     r = []
     for code in _get(country_code):
         _review_api_data['hl'] = code
-        print('Country ', _review_api_data['hl'])
+        _review_api_data['pageNum'] = 0
         reviews_str = "1"
+        if VERBOSE:
+            print('Country ', _review_api_data['hl'])
         while len(reviews_str):
             response = requests.post(_reviews_resource, data=_review_api_data)
             body = response.text[6:]  # the first 6 characters of the response make the json invalid
@@ -50,7 +86,6 @@ def reviews(app_id, delay=0, country_code=None, parsing_fn=None):
                     print('Error with code ', code)
                 break
             time.sleep(delay)  # don´t let google block us
-        _review_api_data['pageNum'] = 0
         time.sleep(delay)
     return r
 

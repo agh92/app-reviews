@@ -156,3 +156,5 @@ country_codes = {
     'za': 'South Africa',
     'zw': 'Zimbabwe'
 }
+
+VERBOSE = True

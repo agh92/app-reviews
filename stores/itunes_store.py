@@ -3,7 +3,7 @@ import time
 import requests
 from lxml import etree
 
-from . import country_codes
+from . import country_codes, VERBOSE
 from .Model.review import AppStoreReview
 
 # an other posible source:
@@ -11,6 +11,28 @@ from .Model.review import AppStoreReview
 # ${opts.country} ${opts.page} ${id}  sortby={}/${opts.sort}
 # use xml because it has two more fields than the json updated and html - json also availible
 _resource = 'https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/xml'
+
+
+def raw_reviews(app_id, country_code=None):
+    if VERBOSE:
+        print('Id: ', app_id)
+    r = []
+    for code in _get(country_code):
+        received = 1
+        page = 1
+        if VERBOSE:
+            print('Country ', code)
+        while received > 0:
+            url = _resource.format(code, page, app_id)  # , 'mostRecent'
+            resp = requests.post(url)
+            tree = etree.fromstring(resp.content)
+            received = len(list(tree.iter('{' + tree.nsmap[None] + '}entry')))
+            if VERBOSE:
+                print('Page ', page, ' len ', str(received))
+            page += 1
+            if received > 0:
+                r.append(resp.text)
+    return r
 
 
 def reviews(app_id, country_code=None, delay=0, parsing_fn=None):
@@ -24,12 +46,14 @@ def reviews(app_id, country_code=None, delay=0, parsing_fn=None):
     for code in _get(country_code):
         received = 1
         page = 1
-        print('Country ', code)
+        if VERBOSE:
+            print('Country ', code)
         while received > 0:
             url = _resource.format(code, page, app_id)  # , 'mostRecent'
             try:
                 rx = _reviews(url, parsing_fn)
-                print('Page ', page, ' :', len(rx))
+                if VERBOSE:
+                    print('Page ', page, ' :', len(rx))
                 r.extend(rx)
                 received = len(rx)
                 page += 1
