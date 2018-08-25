@@ -2,6 +2,7 @@ import time
 
 import requests
 from lxml import etree
+from lxml.etree import tostring
 
 from . import country_codes, VERBOSE
 from .Model.review import AppStoreReview
@@ -17,7 +18,7 @@ def raw_reviews(app_id, country_code=None):
     if VERBOSE:
         print('Id: ', app_id)
     r = []
-    for code in _get(country_code):
+    for code in _country_codes(country_code):
         received = 1
         page = 1
         if VERBOSE:
@@ -35,20 +36,16 @@ def raw_reviews(app_id, country_code=None):
     return r
 
 
-def reviews(app_id, country_code=None, delay=0, parsing_fn=None):
-    """
-    :param country_code:
-    :param app_id: app id from itunes connect
-    :param country:
-    :return:
-    """
+def reviews(app_id, country_code=None, parsing_fn=None):
+    if parsing_fn is None:
+        parsing_fn = _parse_reviews
     r = []
     for raw_review in raw_reviews(app_id, country_code):
-        r.extend(_reviews(raw_review[1], parsing_fn))
+        r.extend(parsing_fn(raw_review[1]))
     return r
 
 
-def _get(country_code):
+def _country_codes(country_code):
     if isinstance(country_code, str):
         return [country_code]
     elif isinstance(country_code, list) or isinstance(country_code, set):
@@ -57,10 +54,7 @@ def _get(country_code):
         return country_codes.keys()
 
 
-def _reviews(content, parsing_fn=None):
-    if parsing_fn is None:
-        parsing_fn = _parse_review
-
+def _parse_reviews(content):
     tree = etree.fromstring(content)
     std_namespace = tree.nsmap[None]
     im_namespace = tree.nsmap['im']
@@ -73,25 +67,24 @@ def _reviews(content, parsing_fn=None):
     else:
         app_id = None
     for child in iter_child:
-        parsed_review = parsing_fn(child)
+        parsed_review = _parse_review(child)
         parsed_review.app_id = app_id
         r.append(parsed_review)
     return r
 
 
 def _parse_review(entry, std_namespace='http://www.w3.org/2005/Atom', im_namespace='http://itunes.apple.com/rss'):
+    raw = tostring(entry)
     review_id = entry.find('{' + std_namespace + '}id').xpath("string()")
     updated = entry.find('{' + std_namespace + '}updated').xpath("string()")
-    # TODO get version for date?
     title = entry.find('{' + std_namespace + '}title').xpath("string()")  # title <title> text
     body = None
+    html = None
     for content in entry.iter('{' + std_namespace + '}content'):  # content < type="text"> text
         if content.get("type") == 'text':
             body = content.xpath("string()")
-            break
-        elif content.get("type") == 'html':
-            # TODO
-            pass
+        if content.get("type") == 'html':
+            html = content.xpath("string()")
     rating = entry.find('{' + im_namespace + '}rating')  # rating <im:rating> text
     if rating is not None:
         rating = rating.xpath("string()")
@@ -105,4 +98,4 @@ def _parse_review(entry, std_namespace='http://www.w3.org/2005/Atom', im_namespa
         author_name = author.find('{' + std_namespace + '}name')
         if author_name is not None:
             author_name = author_name.xpath("string()")
-    return AppStoreReview(None, review_id, author_name, updated, rating, title, body, version, None)
+    return AppStoreReview(None, review_id, author_name, updated, rating, title, body, version, raw, html)

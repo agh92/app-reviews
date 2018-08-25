@@ -29,7 +29,7 @@ def raw_reviews(app_id, delay=0, country_code=None):
         print('Id: ', app_id)
     r = []
     _review_api_data = _default_request_data(app_id)
-    for code in _get(country_code):
+    for code in _country_codes(country_code):
         _review_api_data['hl'] = code
         _review_api_data['pageNum'] = 0
         reviews_str = "1"
@@ -57,24 +57,27 @@ def raw_reviews(app_id, delay=0, country_code=None):
 
 def reviews(app_id, delay=0, country_code=None, parsing_fn=None):
     if parsing_fn is None:
-        parsing_fn = _parse_review
+        parsing_fn = _parse_reviews
     r = []
     for raw_review in raw_reviews(app_id, delay, country_code):
-        body = raw_review[0][6:]  # the first 6 characters of the response make the json invalid
-        reviews_str = json.loads(body)[0][2].strip().encode('utf-8')
-        divs = pq(reviews_str)('div.single-review')
-        rx = [parsing_fn(tostring(div), app_id) for div in divs if len(div)]
-        r.extend(rx)
+        r.extend(parsing_fn(raw_review[0], app_id))
     return r
 
 
-def _get(country_code):
+def _country_codes(country_code):
     if isinstance(country_code, str):
         return [country_code]
     elif isinstance(country_code, list) or isinstance(country_code, set):
         return country_code
     else:  # if len(country_code) == 0 or country_code is None:
         return country_codes.keys()
+
+
+def _parse_reviews(raw_review, app_id):
+    body = raw_review[6:]  # the first 6 characters of the response make the json invalid
+    reviews_str = json.loads(body)[0][2].strip().encode('utf-8')
+    divs = pq(reviews_str)('div.single-review')
+    return [_parse_review(tostring(div), app_id) for div in divs if len(div)]
 
 
 def _parse_review(xml_string, app_id):
@@ -103,7 +106,7 @@ def _parse_review(xml_string, app_id):
                             stars=stars,
                             title=title,
                             body=body,
-                            raw_review=None)
+                            raw_review=xml_string)
 
 
 class GooglePlayExceoption(Exception):

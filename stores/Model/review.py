@@ -29,6 +29,8 @@ class GooglePlayReview(Review):
 
 class AppStoreReview(Review):
 
-    def __init__(self, app_id, review_id, author, date, stars, title, body, version, raw_review):
+    def __init__(self, app_id, review_id, author, date, stars, title, body, version, raw_review, html):
         super().__init__(app_id, review_id, author, date, stars, title, body, raw_review)
         self.version = version
+        self.html = html
+
