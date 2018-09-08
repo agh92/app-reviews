@@ -167,3 +167,5 @@ fabric.properties
 get_reviews.py
 examples
 trainig_set
+*.xlsx
+training_set

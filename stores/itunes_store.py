@@ -32,6 +32,7 @@ def raw_reviews(app_id, country_code=None):
                 print('Page ', page, ' len ', str(received))
             page += 1
             if received > 0:
+                # TODO check that content is not in the list so we dont add duplicates in the list
                 r.append((resp.text, resp.content))
     return r
 
