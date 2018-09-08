@@ -1,5 +1,3 @@
-import time
-
 import requests
 from lxml import etree
 from lxml.etree import tostring
@@ -31,9 +29,9 @@ def raw_reviews(app_id, country_code=None):
             if VERBOSE:
                 print('Page ', page, ' len ', str(received))
             page += 1
-            if received > 0:
-                # TODO check that content is not in the list so we dont add duplicates in the list
-                r.append((resp.text, resp.content))
+            tpl = (resp.text, resp.content)
+            if received > 0 and tpl not in r:  # check that we are not adding content that is the same
+                r.append(tpl)
     return r
 
 
@@ -68,35 +66,36 @@ def _parse_reviews(content):
     else:
         app_id = None
     for child in iter_child:
-        parsed_review = _parse_review(child)
-        parsed_review.app_id = app_id
-        r.append(parsed_review)
+        if _text_body(child):
+            parsed_review = _parse_review(child)
+            parsed_review.app_id = app_id
+            r.append(parsed_review)
     return r
 
 
-def _parse_review(entry, std_namespace='http://www.w3.org/2005/Atom', im_namespace='http://itunes.apple.com/rss'):
-    raw = tostring(entry)
-    review_id = entry.find('{' + std_namespace + '}id').xpath("string()")
-    updated = entry.find('{' + std_namespace + '}updated').xpath("string()")
-    title = entry.find('{' + std_namespace + '}title').xpath("string()")  # title <title> text
-    body = None
-    html = None
+def _text_body(entry, std_namespace='http://www.w3.org/2005/Atom'):
+    body = ''
     for content in entry.iter('{' + std_namespace + '}content'):  # content < type="text"> text
         if content.get("type") == 'text':
             body = content.xpath("string()")
-        if content.get("type") == 'html':
-            html = content.xpath("string()")
+            break
+    return body
+
+
+def _parse_review(entry, std_namespace='http://www.w3.org/2005/Atom', im_namespace='http://itunes.apple.com/rss'):
+    raw = str(tostring(entry))  # tostring will return bytes and we cant json serelize bytes so call str
+    review_id = entry.find('{' + std_namespace + '}id').xpath("string()")
+    updated = entry.find('{' + std_namespace + '}updated').xpath("string()")
+    title = entry.find('{' + std_namespace + '}title').xpath("string()")  # title <title> text
+    body = _text_body(entry)
     rating = entry.find('{' + im_namespace + '}rating')  # rating <im:rating> text
     if rating is not None:
         rating = rating.xpath("string()")
     version = entry.find('{' + im_namespace + '}version')  # version <im:version> text
     if version is not None:
         version = version.xpath("string()")
-    # TODO optimise just one find until name tag
-    author = entry.find('{' + std_namespace + '}author')  # author_name <author><name> text
-    author_name = None
-    if author is not None:
-        author_name = author.find('{' + std_namespace + '}name')
-        if author_name is not None:
-            author_name = author_name.xpath("string()")
-    return AppStoreReview(None, review_id, author_name, updated, rating, title, body, version, raw, html)
+    author_name = entry.find(
+        '{' + std_namespace + '}author/' + '{' + std_namespace + '}name')  # author_name <author><name> text
+    if author_name is not None:
+        author_name = author_name.xpath("string()")
+    return AppStoreReview(None, review_id, author_name, updated, rating, title, body, version, raw)

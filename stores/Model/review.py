@@ -17,7 +17,7 @@ class Review:
     #    return self.__dict__ == other.__dict__
 
     def to_json(self):
-        return json.dumps(self.__dict__)
+        return json.dumps({k: v for k, v in self.__dict__.items() if not isinstance(v, bytes)})
 
 
 class GooglePlayReview(Review):
@@ -29,8 +29,6 @@ class GooglePlayReview(Review):
 
 class AppStoreReview(Review):
 
-    def __init__(self, app_id, review_id, author, date, stars, title, body, version, raw_review, html):
+    def __init__(self, app_id, review_id, author, date, stars, title, body, version, raw_review):
         super().__init__(app_id, review_id, author, date, stars, title, body, raw_review)
         self.version = version
-        self.html = html
-

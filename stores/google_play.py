@@ -45,11 +45,12 @@ def raw_reviews(app_id, delay=0, country_code=None):
                 _review_api_data['pageNum'] += 1
                 if VERBOSE:
                     print('Page: ', _review_api_data['pageNum'], ' len ', str(len(reviews_str)))
-                if len(reviews_str):
-                    r.append((response.text, response.content))
+                tpl = (response.text, response.content)
+                if len(reviews_str) and tpl not in r:
+                    r.append()
             except:
                 if body.find(_warning_msg) != -1:
-                    raise GooglePlayExceoption('Ip blocked by Google')
+                    raise GooglePlayException('Ip blocked by Google')
                 raise
             time.sleep(delay)
     return r
@@ -106,8 +107,8 @@ def _parse_review(xml_string, app_id):
                             stars=stars,
                             title=title,
                             body=body,
-                            raw_review=xml_string)
+                            raw_review=str(xml_string))
 
 
-class GooglePlayExceoption(Exception):
+class GooglePlayException(Exception):
     pass

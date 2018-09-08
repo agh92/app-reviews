@@ -169,3 +169,6 @@ examples
 trainig_set
 *.xlsx
 training_set
+scripts
+training_set_temp.zip
+training_set_temp2.zip
