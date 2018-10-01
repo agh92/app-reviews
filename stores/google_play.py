@@ -47,7 +47,7 @@ def raw_reviews(app_id, delay=0, country_code=None):
                     print('Page: ', _review_api_data['pageNum'], ' len ', str(len(reviews_str)))
                 tpl = (response.text, response.content)
                 if len(reviews_str) and tpl not in r:
-                    r.append()
+                    r.append(tpl)
             except:
                 if body.find(_warning_msg) != -1:
                     raise GooglePlayException('Ip blocked by Google')
