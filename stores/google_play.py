@@ -94,7 +94,8 @@ def _parse_review(xml_string, app_id):
     perma_link = review_info('a.reviews-permalink').attr('href')
     # div.review-header div.review-info div.tiny-star star-rating-non-editable-container aria-label
     stars = review_info('div.tiny-star').attr('aria-label')
-    review_body = div('div.review-body').eq(0)
+    review_body = div('div.review-body').eq(
+        0)  # TODO remove \nVollst\u00c3\u00a4ndige Rezension from the end of the review
     # div.review-body with-review-wrapper span.review-title text
     title = review_body('span.review-title').text()
     # div.review-body with-review-wrapper text
