@@ -12,7 +12,7 @@ class Review:
         self.author = author
         self.raw_review = raw_review
 
-    # TODO implement __eq__ and __hash__ to drop duplicates form countries that return the same reviews
+    # NICE TO HAVE implement __eq__ and __hash__ to drop duplicates form countries that return the same reviews
     # def __eq__(self, other):
     #    return self.__dict__ == other.__dict__
 
