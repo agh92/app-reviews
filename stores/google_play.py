@@ -95,11 +95,14 @@ def _parse_review(xml_string, app_id):
     # div.review-header div.review-info div.tiny-star star-rating-non-editable-container aria-label
     stars = review_info('div.tiny-star').attr('aria-label')
     review_body = div('div.review-body').eq(0)
-    # TODO remove \nVollst\u00c3\u00a4ndige Rezension from the end of the review
-    # TODO delete <div class="review-link" style="display:none"> if style display:none
     # div.review-body with-review-wrapper span.review-title text
     title = review_body('span.review-title').text()
     # div.review-body with-review-wrapper text
+    if review_body('div.review-link').eq(0).attr('style') == 'display:none':
+        review_body.remove('div.review-link')
+    else:
+        print('WARNING: NO IMPLEMENTATION')
+        # TODO follow permalink and get the full review
     body = review_body.text()
     return GooglePlayReview(app_id=app_id,
                             review_id=review_id,

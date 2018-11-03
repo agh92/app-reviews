@@ -15,6 +15,7 @@ Want to contribute? :clap: Just fork and make a PR :thumbsup:
 
 Open to suggestions
 
+- [ ] Code TODOs
 - [ ] Documentation
 - [ ] Tests
 - [ ] Examples
