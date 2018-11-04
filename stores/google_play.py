@@ -4,7 +4,8 @@ import time
 import requests
 from pyquery import PyQuery as pq
 
-from stores import country_codes, VERBOSE
+import stores
+from stores import country_codes
 from stores.Model.review import GooglePlayReview
 from lxml.etree import tostring
 
@@ -25,7 +26,7 @@ def _default_request_data(app_id):
 
 
 def raw_reviews(app_id, delay=0, country_code=None):
-    if VERBOSE:
+    if stores.VERBOSE:
         print('Id: ', app_id)
     r = []
     _review_api_data = _default_request_data(app_id)
@@ -33,7 +34,7 @@ def raw_reviews(app_id, delay=0, country_code=None):
         _review_api_data['hl'] = code
         _review_api_data['pageNum'] = 0
         reviews_str = "1"
-        if VERBOSE:
+        if stores.VERBOSE:
             print('Country ', _review_api_data['hl'])
         while len(reviews_str):
             response = requests.post(_reviews_resource, data=_review_api_data)
@@ -43,7 +44,7 @@ def raw_reviews(app_id, delay=0, country_code=None):
                 # if the string is empty there are no more reviews to process
                 reviews_str = json.loads(body, encoding=response.encoding)[0][2].strip().encode(response.encoding)
                 _review_api_data['pageNum'] += 1
-                if VERBOSE:
+                if stores.VERBOSE:
                     print('Page: ', _review_api_data['pageNum'], ' len ', str(len(reviews_str)))
                 tpl = (response.text, response.content)
                 if len(reviews_str) and tpl not in r:
@@ -100,7 +101,7 @@ def _parse_review(xml_string, app_id):
     # div.review-body with-review-wrapper text
     if review_body('div.review-link').eq(0).attr('style') == 'display:none':
         review_body.remove('div.review-link')
-    else:
+    elif stores.VERBOSE:
         print('WARNING: NO IMPLEMENTATION')
         # TODO follow permalink and get the full review
     body = review_body.text()

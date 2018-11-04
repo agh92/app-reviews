@@ -2,8 +2,9 @@ import requests
 from lxml import etree
 from lxml.etree import tostring
 
-from . import country_codes, VERBOSE
-from .Model.review import AppStoreReview
+import stores
+from stores import country_codes
+from stores.Model.review import AppStoreReview
 
 # an other posible source:
 # - http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
@@ -13,20 +14,20 @@ _resource = 'https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/xml'
 
 
 def raw_reviews(app_id, country_code=None):
-    if VERBOSE:
+    if stores.VERBOSE:
         print('Id: ', app_id)
     r = []
     for code in _country_codes(country_code):
         received = 1
         page = 1
-        if VERBOSE:
+        if stores.VERBOSE:
             print('Country ', code)
         while received > 0:
             url = _resource.format(code, page, app_id)  # , 'mostRecent'
             resp = requests.post(url)
             tree = etree.fromstring(resp.content)
             received = len(list(tree.iter('{' + tree.nsmap[None] + '}entry')))
-            if VERBOSE:
+            if stores.VERBOSE:
                 print('Page ', page, ' len ', str(received))
             page += 1
             tpl = (resp.text, resp.content)
@@ -40,7 +41,7 @@ def reviews(app_id, country_code=None, parsing_fn=None):
         parsing_fn = _parse_reviews
     r = []
     for raw_review in raw_reviews(app_id, country_code):
-        r.extend(parsing_fn(raw_review[1]))
+        r.extend(parsing_fn(raw_review[1], app_id))
     return r
 
 
@@ -53,18 +54,18 @@ def _country_codes(country_code):
         return country_codes.keys()
 
 
-def _parse_reviews(content):
+def _parse_reviews(content, app_id=None):
     tree = etree.fromstring(content)
     std_namespace = tree.nsmap[None]
-    im_namespace = tree.nsmap['im']
+    # im_namespace = tree.nsmap['im']
     r = []
     # skip the first entry because its the itunes description and not a review
     iter_child = tree.iter('{' + std_namespace + '}entry')
-    itunes_entry = tree.find('{' + std_namespace + '}entry')
-    if itunes_entry is not None:  # the first entry is itunes information not review
-        app_id = itunes_entry.find('{' + std_namespace + '}id').get('{' + im_namespace + '}id')
-    else:
-        app_id = None
+    # itunes_entry = tree.find('{' + std_namespace + '}entry')
+    # if itunes_entry is not None:  # the first entry is itunes information not review
+    #     app_id = itunes_entry.find('{' + std_namespace + '}id').get('{' + im_namespace + '}id')
+    # else:
+    #     app_id = None
     for child in iter_child:
         if _text_body(child):
             parsed_review = _parse_review(child)
