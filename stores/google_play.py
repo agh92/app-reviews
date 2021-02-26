@@ -38,14 +38,17 @@ def raw_reviews(app_id, delay=0, country_code=None):
             print('Country ', _review_api_data['hl'])
         while len(reviews_str):
             response = requests.post(_reviews_resource, data=_review_api_data)
-            body = response.text[6:]  # the first 6 characters of the response make the json invalid
+            # the first 6 characters of the response make the json invalid
+            body = response.text[6:]
             # the body contains a list with in a list -> xml/html format - encode utf8 -> emojies
             try:
                 # if the string is empty there are no more reviews to process
-                reviews_str = json.loads(body, encoding=response.encoding)[0][2].strip().encode(response.encoding)
+                reviews_str = json.loads(body, encoding=response.encoding)[
+                    0][2].strip().encode(response.encoding)
                 _review_api_data['pageNum'] += 1
                 if stores.VERBOSE:
-                    print('Page: ', _review_api_data['pageNum'], ' len ', str(len(reviews_str)))
+                    print('Page: ', _review_api_data['pageNum'], ' len ', str(
+                        len(reviews_str)))
                 tpl = (response.text, response.content)
                 if len(reviews_str) and tpl not in r:
                     r.append(tpl)
@@ -76,8 +79,10 @@ def _country_codes(country_code):
 
 
 def _parse_reviews(raw_review, app_id):
-    body = raw_review[6:]  # the first 6 characters of the response make the json invalid
-    reviews_str = json.loads(body, encoding='utf-8')[0][2].strip().encode('utf-8')
+    # the first 6 characters of the response make the json invalid
+    body = raw_review[6:]
+    reviews_str = json.loads(
+        body, encoding='utf-8')[0][2].strip().encode('utf-8')
     divs = pq(reviews_str)('div.single-review')
     return [_parse_review(tostring(div), app_id) for div in divs if len(div)]
 

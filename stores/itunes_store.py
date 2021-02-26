@@ -76,7 +76,8 @@ def _parse_reviews(content, app_id=None):
 
 def _text_body(entry, std_namespace='http://www.w3.org/2005/Atom'):
     body = ''
-    for content in entry.iter('{' + std_namespace + '}content'):  # content < type="text"> text
+    # content < type="text"> text
+    for content in entry.iter('{' + std_namespace + '}content'):
         if content.get("type") == 'text':
             body = content.xpath("string()")
             break
@@ -84,15 +85,19 @@ def _text_body(entry, std_namespace='http://www.w3.org/2005/Atom'):
 
 
 def _parse_review(entry, std_namespace='http://www.w3.org/2005/Atom', im_namespace='http://itunes.apple.com/rss'):
-    raw = str(tostring(entry))  # tostring will return bytes and we cant json serelize bytes so call str
+    # tostring will return bytes and we cant json serelize bytes so call str
+    raw = str(tostring(entry))
     review_id = entry.find('{' + std_namespace + '}id').xpath("string()")
     updated = entry.find('{' + std_namespace + '}updated').xpath("string()")
-    title = entry.find('{' + std_namespace + '}title').xpath("string()")  # title <title> text
+    # title <title> text
+    title = entry.find('{' + std_namespace + '}title').xpath("string()")
     body = _text_body(entry)
-    rating = entry.find('{' + im_namespace + '}rating')  # rating <im:rating> text
+    # rating <im:rating> text
+    rating = entry.find('{' + im_namespace + '}rating')
     if rating is not None:
         rating = rating.xpath("string()")
-    version = entry.find('{' + im_namespace + '}version')  # version <im:version> text
+    # version <im:version> text
+    version = entry.find('{' + im_namespace + '}version')
     if version is not None:
         version = version.xpath("string()")
     author_name = entry.find(
