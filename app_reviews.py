@@ -23,7 +23,9 @@ def google(appId, countryCode):
 @click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
 @click.option('-o', '--output', 'output', required=False, type=click.Path())
 def apple(appId, countryCode, output):
-    print('Get GooglePlay ' + appId + ' for ' + countryCode)
+    if stores.VERBOSE and not output:
+        print('Get GooglePlay ' + appId + ' for ' + countryCode)
+
     revs = apple_reviews(appId, 'us')
     for review in revs:
         print(review.to_json())
