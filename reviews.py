@@ -4,6 +4,7 @@ from stores.itunes_store import reviews as apple_reviews
 from stores.google_play import reviews as play_reviews
 from stores import code_choises
 
+
 @click.group()
 @click.option('-v', '--verbose', 'verbose', is_flag=True)
 def cli(verbose):
@@ -15,7 +16,12 @@ def cli(verbose):
 @click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
 @click.option('-o', '--output', 'output', required=False, type=click.Path())
 def google(appId, countryCode):
-    print('Get GooglePlay ' + appId + ' for ' + countryCode)
+    revs = play_reviews(appId, countryCode)
+    if not output:
+        print_revs(revs)
+    else:
+        # TODO save to gile
+        pass
 
 
 @cli.command()
@@ -23,9 +29,18 @@ def google(appId, countryCode):
 @click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
 @click.option('-o', '--output', 'output', required=False, type=click.Path())
 def apple(appId, countryCode, output):
-    if stores.VERBOSE and not output:
-        print('Get GooglePlay ' + appId + ' for ' + countryCode)
+    revs = apple_reviews(appId, countryCode)
+    if not output:
+        print_revs(revs)
+    else:
+        # TODO save to gile
+        pass
 
-    revs = apple_reviews(appId, 'us')
-    for review in revs:
+
+def print_revs(reviews):
+    for review in reviews:
         print(review.to_json())
+
+
+def SaveToFile(reviews, file):
+    pass
