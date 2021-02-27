@@ -174,3 +174,13 @@ training_set_temp.zip
 training_set_temp2.zip
 .idea/comments-scraping.iml
 .idea/misc.xml
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
