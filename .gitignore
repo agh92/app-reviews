@@ -176,7 +176,7 @@ training_set_temp2.zip
 .idea/misc.xml
 
 .vscode/*
-!.vscode/settings.json
+#!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
