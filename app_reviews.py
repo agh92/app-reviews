@@ -5,8 +5,9 @@ from stores.google_play import reviews as play_reviews
 from stores import code_choises
 
 @click.group()
-def cli():
-    pass
+@click.option('-v', '--verbose', 'verbose', is_flag=True)
+def cli(verbose):
+    stores.VERBOSE = verbose
 
 
 @cli.command()
@@ -26,8 +27,3 @@ def apple(appId, countryCode, output):
     revs = apple_reviews(appId, 'us')
     for review in revs:
         print(review.to_json())
-
-
-
-if __name__ == '__main__':
-    cli()
