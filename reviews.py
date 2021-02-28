@@ -20,8 +20,7 @@ def google(appId, countryCode):
     if not output:
         print_revs(revs)
     else:
-        # TODO save to gile
-        pass
+        save(revs, path)
 
 
 @cli.command()
@@ -30,11 +29,11 @@ def google(appId, countryCode):
 @click.option('-o', '--output', 'output', required=False, type=click.Path())
 def apple(appId, countryCode, output):
     revs = apple_reviews(appId, countryCode)
+    # TODO remove print revs method and just write to std-out
     if not output:
         print_revs(revs)
     else:
-        # TODO save to gile
-        pass
+        save(revs, path)
 
 
 def print_revs(reviews):
@@ -42,5 +41,20 @@ def print_revs(reviews):
         print(review.to_json())
 
 
-def SaveToFile(reviews, file):
+def save(reviews, path: click.Path):
+    destination = get_destination(path)
+    write(reviews, destination)
+
+
+def get_destination(path: click.Path):
+    if path.path_type == 'file':
+        if path.exists:
+            # TODO check if file is emty and use it if not emty throw error
+            pass
+    else:
+        # TODO use appId as path name create file
+        pass
+
+
+def write(reviews, destination):
     pass
