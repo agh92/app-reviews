@@ -1,8 +1,0 @@
-{
-    "python.pythonPath": "${env.HOME}/.pyenv/versions/venv391/bin/python",
-    "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/customModule"
-    ],
-    "python.linting.enabled": true,
-    "python.linting.lintOnSave": true
-}

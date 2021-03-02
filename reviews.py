@@ -1,5 +1,4 @@
 import os
-import json
 
 import click
 
@@ -18,19 +17,21 @@ def cli(verbose):
 @cli.command()
 @click.option('-id', '--app-id', 'appId', required=True, type=str)
 @click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
-@click.option('-o', '--output', 'output', required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
-def play(appId, countryCode, output):
+@click.option('-o', '--output', 'output',
+              required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
+def play(app_id, country_code, output):
     check_output(output)
-    download_revs(appId, countryCode, play_reviews, output)
+    download_revs(app_id, country_code, play_reviews, output)
 
 
 @cli.command()
 @click.option('-id', '--app-id', 'appId', required=True, type=str)
 @click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
-@click.option('-o', '--output', 'output', required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
-def itunes(appId, countryCode, output):
+@click.option('-o', '--output', 'output',
+              required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
+def itunes(app_id, country_code, output):
     check_output(output)
-    download_revs(appId, countryCode, apple_reviews, output)
+    download_revs(app_id, country_code, apple_reviews, output)
 
 
 def check_output(output):
@@ -40,8 +41,8 @@ def check_output(output):
                 'output', 'destination file is not empty!')
 
 
-def download_revs(appId, countryCode, download_function, output):
-    revs = download_function(appId, countryCode)
+def download_revs(app_id, country_code, download_function, output):
+    revs = download_function(app_id, country_code)
     if len(revs) == 0:
         print('No reviews found!')
         return
@@ -50,7 +51,7 @@ def download_revs(appId, countryCode, download_function, output):
 
 def save(reviews, output):
     if not output:
-        print_revs(revs)
+        print_revs(reviews)
         return
     write(reviews, output)
 
