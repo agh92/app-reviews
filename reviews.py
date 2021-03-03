@@ -1,4 +1,5 @@
 import os
+import sys
 
 import click
 
@@ -15,53 +16,31 @@ def cli(verbose):
 
 
 @cli.command()
-@click.option('-id', '--app-id', 'appId', required=True, type=str)
-@click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
+@click.option('-id', '--app-id', 'app_id', required=True, type=str)
+@click.option('-cc', '--country-code', 'country_code', required=True, type=click.Choice(code_choises))
 @click.option('-o', '--output', 'output',
               required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
 def play(app_id, country_code, output):
-    check_output(output)
-    download_revs(app_id, country_code, play_reviews, output)
+    download_reviews(app_id, country_code, play_reviews, output)
 
 
 @cli.command()
-@click.option('-id', '--app-id', 'appId', required=True, type=str)
-@click.option('-cc', '--country-code', 'countryCode', required=True, type=click.Choice(code_choises))
+@click.option('-id', '--app-id', 'app_id', required=True, type=str)
+@click.option('-cc', '--country-code', 'country_code', required=True, type=click.Choice(code_choises))
 @click.option('-o', '--output', 'output',
               required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
 def itunes(app_id, country_code, output):
-    check_output(output)
-    download_revs(app_id, country_code, apple_reviews, output)
+    download_reviews(app_id, country_code, apple_reviews, output)
 
 
-def check_output(output):
-    if output:
-        if os.path.isfile(output) and os.stat(output).st_size > 0:
-            raise click.BadOptionUsage(
-                'output', 'destination file is not empty!')
+def download_reviews(app_id, country_code, download_function, output):
+    if output is not None and os.path.isfile(output) and os.stat(output).st_size > 0:
+        raise click.BadOptionUsage('output', 'destination file is not empty!')
 
+    reviews = download_function(app_id, country_code)
 
-def download_revs(app_id, country_code, download_function, output):
-    revs = download_function(app_id, country_code)
-    if len(revs) == 0:
+    if len(reviews) > 0:
+        with open(output, 'w') if output is not None else sys.stdout as file:
+            print('[', ','.join([review.to_json() for review in reviews]), ']', file=file)
+    else:
         print('No reviews found!')
-        return
-    save(revs, output)
-
-
-def save(reviews, output):
-    if not output:
-        print_revs(reviews)
-        return
-    write(reviews, output)
-
-
-def print_revs(reviews):
-    for review in reviews:
-        print(review.to_json())
-
-
-def write(reviews, output):
-    with open(output, 'w') as file:
-        file.write('[' + ','.join([review.to_json()
-                                   for review in reviews]) + ']')
