@@ -8,7 +8,7 @@ import stores
 from stores.Model.review import Review
 from stores.itunes_store import reviews as apple_reviews
 from stores.google_play import reviews as play_reviews
-from stores import code_choises
+from stores import code_choices
 
 
 @click.group()
@@ -19,7 +19,7 @@ def cli(verbose: bool):
 
 @cli.command()
 @click.option('-id', '--app-id', 'app_id', required=True, type=str)
-@click.option('-cc', '--country-code', 'country_code', required=True, type=click.Choice(code_choises))
+@click.option('-cc', '--country-code', 'country_code', required=True, type=click.Choice(code_choices))
 @click.option('-o', '--output', 'output',
               required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
 def play(app_id: str, country_code: str, output: str):
@@ -28,7 +28,7 @@ def play(app_id: str, country_code: str, output: str):
 
 @cli.command()
 @click.option('-id', '--app-id', 'app_id', required=True, type=str)
-@click.option('-cc', '--country-code', 'country_code', required=True, type=click.Choice(code_choises))
+@click.option('-cc', '--country-code', 'country_code', required=True, type=click.Choice(code_choices))
 @click.option('-o', '--output', 'output',
               required=False, type=click.Path(file_okay=True, dir_okay=False, writable=True, resolve_path=True))
 def itunes(app_id: str, country_code: str, output: str):
