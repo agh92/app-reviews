@@ -3,16 +3,6 @@ from lxml.etree import tostring
 from stores.Model.review import AppStoreReview
 
 
-def _parse_reviews(xml_reviews, app_id=None):
-    r = []
-    for child in xml_reviews:
-        if _text_body(child):
-            parsed_review = _parse_review(child)
-            parsed_review.app_id = app_id
-            r.append(parsed_review)
-    return r
-
-
 def _text_body(entry, std_namespace="http://www.w3.org/2005/Atom"):
     body = ""
     # content < type="text"> text

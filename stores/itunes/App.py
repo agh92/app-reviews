@@ -3,7 +3,7 @@ import rx
 from lxml import etree
 from rx import operators as ops
 
-from stores.itunes.parsing_functions import _parse_reviews
+from stores.itunes.parsing_functions import _text_body, _parse_review
 
 # an other possible source:
 # http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
@@ -17,7 +17,10 @@ class App:
         self.app_id = app_id
         self.country_code = country_code
         self.reviews = rx.create(self._fetch_reviews).pipe(
-            ops.map(lambda xml_reviews: _parse_reviews(xml_reviews, self.app_id)),
+            ops.flat_map(lambda xml_tree: xml_tree),
+            ops.filter(lambda xml_review: _text_body(xml_review)),
+            ops.map(lambda xml_review: _parse_review(xml_review)),
+            # add id missing
         )
 
     def _fetch_reviews(self, observer, scheduler):

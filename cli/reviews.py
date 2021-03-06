@@ -1,6 +1,7 @@
 import os
 import sys
 from typing import Callable
+from rx import operators as ops
 
 import click
 
@@ -57,9 +58,14 @@ def itunes(app_id: str, country_code: str, output: str):
     app = App(app_id, country_code)
     with open(output, "w") if output is not None else sys.stdout as file_handle:
         print("[", file=file_handle)
-        app.reviews.subscribe(
+        app.reviews.pipe(
+            # TODO what if there is only one review
+            # TODO what if after buffering only one remains at the end
+            ops.map(lambda review: review.to_json()),
+            ops.buffer_with_count(2),
+        ).subscribe(
             on_next=lambda value: print(
-                ",".join([rev.to_json() for rev in value]), file=file_handle
+                ",".join([rev for rev in value]), file=file_handle
             ),
             on_completed=lambda: print("]", file=file_handle),
         )
