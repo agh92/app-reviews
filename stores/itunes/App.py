@@ -3,13 +3,14 @@ import rx
 from lxml import etree
 from rx import operators as ops
 
-from stores.itunes.parsing_functions import _text_body, _parse_review
+from stores.itunes.parsing_functions import parse_review
 
 # an other possible source:
 # http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
 # ${opts.country} ${opts.page} ${id}  sortby={}/${opts.sort}
 # use xml because it has two more fields than the json: updated and html - json also available
 _resource = "https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/sortBy=mostRecent/xml"
+_xmlns = "http://www.w3.org/2005/Atom"
 
 
 class App:
@@ -18,8 +19,13 @@ class App:
         self.country_code = country_code
         self.reviews = rx.create(self._fetch_reviews).pipe(
             ops.flat_map(lambda xml_tree: xml_tree),
-            ops.filter(lambda xml_review: _text_body(xml_review)),
-            ops.map(lambda xml_review: _parse_review(xml_review, self.app_id)),
+            ops.filter(
+                lambda xml_review: any(
+                    content.get("type") == "text"
+                    for content in xml_review.iter("{" + _xmlns + "}content")
+                )
+            ),
+            ops.map(lambda xml_review: parse_review(xml_review, self.app_id, _xmlns)),
         )
 
     def _fetch_reviews(self, observer, scheduler):

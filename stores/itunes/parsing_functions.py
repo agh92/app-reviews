@@ -3,20 +3,10 @@ from lxml.etree import tostring
 from stores.Model.review import AppStoreReview
 
 
-def _text_body(entry, std_namespace="http://www.w3.org/2005/Atom"):
-    body = ""
-    # content < type="text"> text
-    for content in entry.iter("{" + std_namespace + "}content"):
-        if content.get("type") == "text":
-            body = content.xpath("string()")
-            break
-    return body
-
-
-def _parse_review(
+def parse_review(
     entry,
     app_id,
-    std_namespace="http://www.w3.org/2005/Atom",
+    std_namespace,
     im_namespace="http://itunes.apple.com/rss",
 ):
     # tostring will return bytes and we cant json serelize bytes so call str
@@ -25,7 +15,7 @@ def _parse_review(
     updated = entry.find("{" + std_namespace + "}updated").xpath("string()")
     # title <title> text
     title = entry.find("{" + std_namespace + "}title").xpath("string()")
-    body = _text_body(entry)
+    body = _get_text_content(entry, std_namespace)
     # rating <im:rating> text
     rating = entry.find("{" + im_namespace + "}rating")
     if rating is not None:
@@ -42,3 +32,13 @@ def _parse_review(
     return AppStoreReview(
         app_id, review_id, author_name, updated, rating, title, body, version, raw
     )
+
+
+def _get_text_content(entry, std_namespace):
+    body = ""
+    # content < type="text"> text
+    for content in entry.iter("{" + std_namespace + "}content"):
+        if content.get("type") == "text":
+            body = content.xpath("string()")
+            break
+    return body
