@@ -1,0 +1,18 @@
+<entry xmlns="http://www.w3.org/2005/Atom"
+    xmlns:im="http://itunes.apple.com/rss">
+    <updated>2017-09-17T03:26:20-07:00</updated>
+    <id>1794324639</id>
+    <title>Not Loading Images Correctly</title>
+    <content type="text">Movist hasn\'t been able to load images correctly for years now and the app is very slow. Pretty bad for an app that cots 3&#8364;.</content>
+    <im:contentType term="Application" label="Programm"/>
+    <im:voteSum>0</im:voteSum>
+    <im:voteCount>0</im:voteCount>
+    <im:rating>1</im:rating>
+    <im:version>1.13.5</im:version>
+    <author>
+        <name>Z0mb4y</name>
+        <uri>https://itunes.apple.com/de/reviews/id189318473</uri>
+    </author>
+    <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&amp;type=Purple%20Software"/>
+    <content type="html">&lt;table border="0" width="100%"&gt;\n    &lt;tr&gt;\n        &lt;td&gt;\n            &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt;\n                &lt;tr valign="top" align="left"&gt;\n                    \n                    \n                    \t&lt;td width="100%"&gt;\n                    \n                        &lt;b&gt;&lt;a href="https://apps.apple.com/de/app/movist/id840784742?uo=2"&gt;Not Loading Images Correctly&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;\n                        \n                        \n                        \n                        \n\n                        \n\n                       &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt;\n\t\t\t\t\t\t\n                        &lt;/font&gt;\n                    &lt;/td&gt;\n                &lt;/tr&gt;\n            &lt;/table&gt;\n        &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;\n            \n                &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt;&lt;br/&gt;Movist hasn&amp;#39;t been able to load images correctly for years now and the app is very slow. Pretty bad for an app that cots 3&#8364;.&lt;/font&gt;&lt;br/&gt;\n            \n            \n            \n        &lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n</content>
+</entry>
