@@ -15,6 +15,7 @@ def _text_body(entry, std_namespace="http://www.w3.org/2005/Atom"):
 
 def _parse_review(
     entry,
+    app_id,
     std_namespace="http://www.w3.org/2005/Atom",
     im_namespace="http://itunes.apple.com/rss",
 ):
@@ -39,5 +40,5 @@ def _parse_review(
     if author_name is not None:
         author_name = author_name.xpath("string()")
     return AppStoreReview(
-        None, review_id, author_name, updated, rating, title, body, version, raw
+        app_id, review_id, author_name, updated, rating, title, body, version, raw
     )

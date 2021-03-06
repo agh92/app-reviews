@@ -19,8 +19,7 @@ class App:
         self.reviews = rx.create(self._fetch_reviews).pipe(
             ops.flat_map(lambda xml_tree: xml_tree),
             ops.filter(lambda xml_review: _text_body(xml_review)),
-            ops.map(lambda xml_review: _parse_review(xml_review)),
-            # add id missing
+            ops.map(lambda xml_review: _parse_review(xml_review, self.app_id)),
         )
 
     def _fetch_reviews(self, observer, scheduler):
