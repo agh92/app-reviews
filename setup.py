@@ -4,7 +4,7 @@ setup(
     name="reviews",
     version="0.1",
     py_modules=["cli", "reviews"],
-    install_requires=["Click", "requests", "pyquery", "lxml"],
+    install_requires=["Click", "requests", "pyquery", "lxml", "Rx"],
     entry_points="""
         [console_scripts]
         reviews=cli.reviews:cli
