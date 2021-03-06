@@ -1,7 +1,7 @@
 import rx
 from rx import operators as ops
 
-from stores.itunes.itunes_store import raw_reviews, _parse_reviews
+from stores.itunes.functions import raw_reviews, _parse_reviews
 
 
 class App:

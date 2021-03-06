@@ -7,7 +7,7 @@ import click
 import stores
 from stores.Model.review import Review
 from stores.itunes.App import App
-from stores.itunes.itunes_store import reviews as apple_reviews
+from stores.itunes.functions import reviews as apple_reviews
 from stores.google_play import reviews as play_reviews
 from stores import code_choices
 
