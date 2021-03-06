@@ -2,51 +2,28 @@ import requests
 from lxml import etree
 from lxml.etree import tostring
 
-from stores import country_codes
 from stores.Model.review import AppStoreReview
 
 # an other posible source:
-# - http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
+# http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
 # ${opts.country} ${opts.page} ${id}  sortby={}/${opts.sort}
 # use xml because it has two more fields than the json updated and html - json also availible
 _resource = "https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/sortBy=mostRecent/xml"
 
 
-def raw_reviews(app_id, country_code=None):
-    r = []
-    for code in _country_codes(country_code):
-        received = 1
-        page = 1
-        while received > 0:
-            url = _resource.format(code, page, app_id)
-            resp = requests.post(url)
-            tree = etree.fromstring(resp.content)
-            received = len(list(tree.iter("{" + tree.nsmap[None] + "}entry")))
-            page += 1
-            tpl = (resp.text, resp.content)
-            if (
-                received > 0 and tpl not in r
-            ):  # check that we are not adding content that is the same
-                r.append(tpl)
-    return r
-
-
-def reviews(app_id, country_code=None, parsing_fn=None):
-    if parsing_fn is None:
-        parsing_fn = _parse_reviews
-    r = []
-    for raw_review in raw_reviews(app_id, country_code):
-        r.extend(parsing_fn(raw_review[1], app_id))
-    return r
-
-
-def _country_codes(country_code):
-    if isinstance(country_code, str):
-        return [country_code]
-    elif isinstance(country_code, list) or isinstance(country_code, set):
-        return country_code
-    else:  # if len(country_code) == 0 or country_code is None:
-        return country_codes.keys()
+def raw_reviews(app_id: str, country_code: str):
+    received = 1
+    page = 1
+    while received > 0:
+        url = _resource.format(country_code, page, app_id)
+        resp = requests.post(url)
+        tree = etree.fromstring(resp.content)
+        received = len(list(tree.iter("{" + tree.nsmap[None] + "}entry")))
+        page += 1
+        tpl = (resp.text, resp.content)
+        # check that we are not adding content that is the same
+        if received > 0:
+            yield tpl
 
 
 def _parse_reviews(content, app_id=None):
