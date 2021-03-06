@@ -17,18 +17,35 @@ class Review:
     #    return self.__dict__ == other.__dict__
 
     def to_json(self):
-        return json.dumps({k: v for k, v in self.__dict__.items() if not isinstance(v, bytes)})
+        return json.dumps(
+            {k: v for k, v in self.__dict__.items() if not isinstance(v, bytes)}
+        )
 
 
 class GooglePlayReview(Review):
-
-    def __init__(self, app_id, review_id, author, date, stars, title, body, perma_link, raw_review):
-        super().__init__(app_id, review_id, author, date, stars, title, body, raw_review)
+    def __init__(
+        self,
+        app_id,
+        review_id,
+        author,
+        date,
+        stars,
+        title,
+        body,
+        perma_link,
+        raw_review,
+    ):
+        super().__init__(
+            app_id, review_id, author, date, stars, title, body, raw_review
+        )
         self.perma_link = perma_link
 
 
 class AppStoreReview(Review):
-
-    def __init__(self, app_id, review_id, author, date, stars, title, body, version, raw_review):
-        super().__init__(app_id, review_id, author, date, stars, title, body, raw_review)
+    def __init__(
+        self, app_id, review_id, author, date, stars, title, body, version, raw_review
+    ):
+        super().__init__(
+            app_id, review_id, author, date, stars, title, body, raw_review
+        )
         self.version = version
