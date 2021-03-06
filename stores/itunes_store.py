@@ -10,7 +10,7 @@ from stores.Model.review import AppStoreReview
 # - http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
 # ${opts.country} ${opts.page} ${id}  sortby={}/${opts.sort}
 # use xml because it has two more fields than the json updated and html - json also availible
-_resource = 'https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/xml'
+_resource = 'https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/sortBy=mostRecent/xml'
 
 
 def raw_reviews(app_id, country_code=None):
@@ -23,7 +23,7 @@ def raw_reviews(app_id, country_code=None):
         if stores.VERBOSE:
             print('Country ', code)
         while received > 0:
-            url = _resource.format(code, page, app_id)  # , 'mostRecent'
+            url = _resource.format(code, page, app_id)
             resp = requests.post(url)
             tree = etree.fromstring(resp.content)
             received = len(list(tree.iter('{' + tree.nsmap[None] + '}entry')))
