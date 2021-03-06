@@ -1,9 +1,7 @@
 import requests
-import rx
 from lxml import etree
 from lxml.etree import tostring
 
-import stores
 from stores import country_codes
 from stores.Model.review import AppStoreReview
 
@@ -14,26 +12,16 @@ from stores.Model.review import AppStoreReview
 _resource = "https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/sortBy=mostRecent/xml"
 
 
-def observable_reviews() -> rx.Observable:
-    pass
-
-
 def raw_reviews(app_id, country_code=None):
-    if stores.VERBOSE:
-        print("Id: ", app_id)
     r = []
     for code in _country_codes(country_code):
         received = 1
         page = 1
-        if stores.VERBOSE:
-            print("Country ", code)
         while received > 0:
             url = _resource.format(code, page, app_id)
             resp = requests.post(url)
             tree = etree.fromstring(resp.content)
             received = len(list(tree.iter("{" + tree.nsmap[None] + "}entry")))
-            if stores.VERBOSE:
-                print("Page ", page, " len ", str(received))
             page += 1
             tpl = (resp.text, resp.content)
             if (
