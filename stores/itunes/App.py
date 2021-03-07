@@ -16,16 +16,7 @@ class App:
     def __init__(self, app_id: str, country_code: str):
         self.app_id = app_id
         self.country_code = country_code
-        self.reviews = rx.create(self._fetch_reviews).pipe(
-            ops.flat_map(lambda xml_tree: xml_tree),
-            ops.filter(
-                lambda xml_review: any(
-                    content.get("type") == "text"
-                    for content in xml_review.iter(XMLNS + "content")
-                )
-            ),
-            ops.map(lambda xml_review: parse_review(xml_review, self.app_id)),
-        )
+        self.reviews = rx.create(self._fetch_reviews)
 
     def _fetch_reviews(self, observer, scheduler):
         # TODO max pages are 50 - confirm
@@ -37,6 +28,14 @@ class App:
             ops.map(lambda response: etree.fromstring(response.content)),
             ops.map(lambda xml_tree: list(xml_tree.iter(XMLNS + "entry"))),
             ops.take_while(lambda xml_reviews: len(xml_reviews) > 0),
+            ops.flat_map(lambda xml_tree: xml_tree),
+            ops.filter(
+                lambda xml_review: any(
+                    content.get("type") == "text"
+                    for content in xml_review.iter(XMLNS + "content")
+                )
+            ),
+            ops.map(lambda xml_review: parse_review(xml_review, self.app_id)),
         ).subscribe(
             on_next=lambda xml_reviews: observer.on_next(xml_reviews),
             on_completed=lambda: observer.on_completed(),
