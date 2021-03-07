@@ -6,7 +6,7 @@ import click
 
 import stores
 from stores.app_store.app import App
-from stores.google_play.functions import reviews as play_reviews
+from stores.google_play.parsing_functions import reviews as play_reviews
 from stores import country_codes
 
 code_choices = [key for key in country_codes.keys()]

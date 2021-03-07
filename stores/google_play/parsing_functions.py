@@ -7,7 +7,7 @@ from lxml.etree import tostring
 
 import stores
 from stores import country_codes
-from stores.google_play.google_play_review import GooglePlayReview
+from stores.google_play.review import GooglePlayReview
 
 _warning_msg = "Our systems have detected unusual traffic from your computer network"
 # this reviews_resource have been exposed by several github projects
