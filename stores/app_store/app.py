@@ -2,11 +2,12 @@ from typing import Optional
 
 import feedparser
 import rx
-from rx import operators as ops
+from rx import operators as ops, Observable
 from rx.core import Observer
 from rx.disposable import Disposable
 from rx.scheduler.scheduler import Scheduler
 
+from stores.model.app import App
 from stores.app_store.review import AppStoreReview
 
 # an other possible source:
@@ -16,11 +17,23 @@ from stores.app_store.review import AppStoreReview
 _rss = "https://itunes.apple.com/{}/rss/customerreviews/page={}/id={}/sortBy=mostRecent/xml"
 
 
-class App:
+class AppStoreApp(App):
     def __init__(self, app_id: str, country_code: str):
-        self.app_id = app_id
-        self.country_code = country_code
-        self.reviews = rx.create(self._fetch)
+        self._app_id = app_id
+        self._country_code = country_code
+        self._reviews = rx.create(self._fetch)
+
+    @property
+    def app_id(self) -> str:
+        return self._app_id
+
+    @property
+    def country_code(self) -> str:
+        return self._country_code
+
+    @property
+    def reviews(self) -> Observable:
+        return self._reviews
 
     def _fetch(self, observer: Observer, scheduler: Optional[Scheduler]) -> Disposable:
         # TODO just use 1 and then switchMap or similar to use the feed links

@@ -1,4 +1,4 @@
-from stores.Model.review import Review
+from stores.model.review import Review
 
 
 class GooglePlayReview(Review):

@@ -5,7 +5,7 @@ from rx import operators as ops
 import click
 
 import stores
-from stores.app_store.app import App
+from stores.app_store.app import AppStoreApp
 from stores.google_play.parsing_functions import reviews as play_reviews
 from stores import country_codes
 
@@ -68,7 +68,7 @@ def play(app_id: str, country_code: str, output: str):
 )
 def itunes(app_id: str, country_code: str, output: str):
     validate_output(output)
-    app = App(app_id, country_code)
+    app = AppStoreApp(app_id, country_code)
     with open(output, "w") if output is not None else sys.stdout as file_handle:
         print("[", file=file_handle)
         container = []
