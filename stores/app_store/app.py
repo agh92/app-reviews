@@ -7,7 +7,7 @@ from rx.core import Observer
 from rx.disposable import Disposable
 from rx.scheduler.scheduler import Scheduler
 
-from stores.model.app import App
+from stores.model import App
 from stores.app_store.review import AppStoreReview
 
 # an other possible source:

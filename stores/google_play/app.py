@@ -1,6 +1,6 @@
 from rx import Observable
 
-from stores.model.app import App
+from stores.model import App
 
 
 class GooglePlayApp(App):

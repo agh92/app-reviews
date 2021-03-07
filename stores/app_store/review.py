@@ -1,6 +1,6 @@
 from feedparser import FeedParserDict
 
-from stores.model.review import Review
+from stores.model import Review
 
 
 class AppStoreReview(Review):
