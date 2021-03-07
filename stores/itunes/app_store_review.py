@@ -13,7 +13,6 @@ class AppStoreReview(Review):
     @staticmethod
     def from_feed_entry(entry: FeedParserDict, app_id: str):
         # see https://feedparser.readthedocs.io/en/latest/common-atom-elements.html for more detail
-        # TODO is it posible to get the xml entry and use it as raw
         # language is also available here but is not really the language of the review is the country code
         # href also available but its of no help because it redirects to the AppStore
         return AppStoreReview(
