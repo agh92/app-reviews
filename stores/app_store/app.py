@@ -7,7 +7,7 @@ from rx.core import Observer
 from rx.disposable import Disposable
 from rx.scheduler.scheduler import Scheduler
 
-from stores.itunes.app_store_review import AppStoreReview
+from stores.app_store.app_store_review import AppStoreReview
 
 # an other possible source:
 # http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us

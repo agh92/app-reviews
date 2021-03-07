@@ -5,9 +5,11 @@ from rx import operators as ops
 import click
 
 import stores
-from stores.itunes.app import App
+from stores.app_store.app import App
 from stores.google_play.functions import reviews as play_reviews
-from stores import code_choices
+from stores import country_codes
+
+code_choices = [key for key in country_codes.keys()]
 
 
 @click.group()

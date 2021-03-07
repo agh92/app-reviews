@@ -157,6 +157,4 @@ country_codes = {
     "zw": "Zimbabwe",
 }
 
-code_choices = [key for key in country_codes.keys()]
-
 VERBOSE = False
