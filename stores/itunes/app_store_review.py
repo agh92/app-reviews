@@ -25,8 +25,7 @@ class AppStoreReview(Review):
             title=entry.title,
             version=entry.im_version,
             body=entry.summary,
-            raw=[
-                content.value if content.type == "application/xhtml+xml" else None
-                for content in entry.content
-            ][0],
+            raw=next(
+                filter(lambda content: content.type == "text/html", entry.content)
+            ).value,
         )
