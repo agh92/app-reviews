@@ -1,14 +1,13 @@
 from typing import Optional
 
-import requests
+import feedparser
 import rx
-from lxml import etree
 from rx import operators as ops
 from rx.core import Observer
 from rx.disposable import Disposable
 from rx.scheduler.scheduler import Scheduler
 
-from stores.itunes.parsing_functions import parse_review, XMLNS
+from stores.itunes.app_store_review import AppStoreReview
 
 # an other possible source:
 # http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup?id=343200656&country=us
@@ -24,23 +23,18 @@ class App:
         self.reviews = rx.create(self._fetch)
 
     def _fetch(self, observer: Observer, scheduler: Optional[Scheduler]) -> Disposable:
-        # TODO max pages are 50 - confirm
+        # TODO just use 1 and then switchMap or similar to use the feed links
         return (
             rx.range(1, 100)
             .pipe(
                 ops.map(lambda page: _rss.format(self.country_code, page, self.app_id)),
-                ops.map(lambda url: requests.post(url)),
-                ops.map(lambda response: etree.fromstring(response.content)),
-                ops.map(lambda xml_tree: list(xml_tree.iter(XMLNS + "entry"))),
-                ops.take_while(lambda xml_reviews: len(xml_reviews) > 0),
-                ops.flat_map(lambda xml_tree: xml_tree),
-                ops.filter(
-                    lambda xml_review: any(
-                        content.get("type") == "text"
-                        for content in xml_review.iter(XMLNS + "content")
-                    )
+                ops.map(feedparser.parse),
+                ops.take_while(lambda feed: len(feed.entries) > 0),
+                ops.map(lambda feed: feed.entries),
+                ops.flat_map(lambda entries: entries),
+                ops.map(
+                    lambda entry: AppStoreReview.from_feed_entry(entry, self.app_id)
                 ),
-                ops.map(lambda xml_review: parse_review(xml_review, self.app_id)),
             )
             .subscribe(observer)
         )

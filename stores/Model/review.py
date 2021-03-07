@@ -2,7 +2,7 @@ import json
 
 
 class Review:
-    def __init__(self, app_id, review_id, author, date, stars, title, body, raw_review):
+    def __init__(self, app_id, review_id, author, date, stars, title, body, raw):
         self.id = review_id
         self.date = date
         self.title = title
@@ -10,7 +10,7 @@ class Review:
         self.app_id = app_id
         self.stars = stars
         self.author = author
-        self.raw_review = raw_review
+        self.raw = raw
 
     # NICE TO HAVE implement __eq__ and __hash__ to drop duplicates form countries that return the same reviews
     # def __eq__(self, other):
@@ -33,19 +33,7 @@ class GooglePlayReview(Review):
         title,
         body,
         perma_link,
-        raw_review,
+        raw,
     ):
-        super().__init__(
-            app_id, review_id, author, date, stars, title, body, raw_review
-        )
+        super().__init__(app_id, review_id, author, date, stars, title, body, raw)
         self.perma_link = perma_link
-
-
-class AppStoreReview(Review):
-    def __init__(
-        self, app_id, review_id, author, date, stars, title, body, version, raw_review
-    ):
-        super().__init__(
-            app_id, review_id, author, date, stars, title, body, raw_review
-        )
-        self.version = version

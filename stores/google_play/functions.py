@@ -125,7 +125,7 @@ def _parse_review(xml_string, app_id):
         stars=stars,
         title=title,
         body=body,
-        raw_review=str(xml_string),
+        raw=str(xml_string),
     )
 
 
