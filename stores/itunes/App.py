@@ -28,20 +28,16 @@ class App:
         )
 
     def _fetch_reviews(self, observer, scheduler):
-        received = 1
-        page = 1
-        while received > 0:
-            revs = self._get_page(page)
-            observer.on_next(revs)
-            received = len(revs)
-            page += 1
-            if received > 0:
-                break
-        observer.on_completed()
-
-    def _get_page(self, page: int) -> []:
-        url = _resource.format(self.country_code, page, self.app_id)
-        resp = requests.post(url)
-        tree = etree.fromstring(resp.content)
-        # skip the first entry because its the itunes description and not a review
-        return list(tree.iter(XMLNS + "entry"))
+        # TODO max pages are 50 - confirm
+        rx.range(1, 100).pipe(
+            ops.map(
+                lambda page: _resource.format(self.country_code, page, self.app_id)
+            ),
+            ops.map(lambda url: requests.post(url)),
+            ops.map(lambda response: etree.fromstring(response.content)),
+            ops.map(lambda xml_tree: list(xml_tree.iter(XMLNS + "entry"))),
+            ops.take_while(lambda xml_reviews: len(xml_reviews) > 0),
+        ).subscribe(
+            on_next=lambda xml_reviews: observer.on_next(xml_reviews),
+            on_completed=lambda: observer.on_completed(),
+        )
