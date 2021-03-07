@@ -7,6 +7,7 @@ XMLNS = "{http://www.w3.org/2005/Atom}"
 XMLNS_IM = "{http://itunes.apple.com/rss}"
 
 
+# TODO use feedparser instead of parsing here
 def parse_review(entry, app_id: str):
     # TODO remove the that this call adds /n/t
     raw = str(tostring(entry))

@@ -1,18 +1,1342 @@
-<entry xmlns="http://www.w3.org/2005/Atom"
-    xmlns:im="http://itunes.apple.com/rss">
-    <updated>2017-09-17T03:26:20-07:00</updated>
-    <id>1794324639</id>
-    <title>Not Loading Images Correctly</title>
-    <content type="text">Movist hasn\'t been able to load images correctly for years now and the app is very slow. Pretty bad for an app that cots 3&#8364;.</content>
-    <im:contentType term="Application" label="Programm"/>
-    <im:voteSum>0</im:voteSum>
-    <im:voteCount>0</im:voteCount>
-    <im:rating>1</im:rating>
-    <im:version>1.13.5</im:version>
+<feed xml:lang="de">
+    <id>
+        https://17.124.160.227/de/rss/customerreviews/page=1/id=840784742/sortBy=mostRecent/xml
+    </id>
+    <title>iTunes Store: Rezensionen</title>
+    <updated>2021-03-07T03:55:32-07:00</updated>
+    <link rel="alternate" type="text/html"
+          href="https://music.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?cc=de&id=100"/>
+    <link rel="self" href="https://17.124.160.227/de/rss/customerreviews/page=1/id=840784742/sortBy=mostRecent/xml"/>
+    <link rel="first"
+          href="https://itunes.apple.com/de/rss/customerreviews/page=1/id=840784742/sortby=mostrecent/xml?urlDesc=/customerreviews/page=1/id=840784742/sortBy=mostRecent/xml"/>
+    <link rel="last"
+          href="https://itunes.apple.com/de/rss/customerreviews/page=1/id=840784742/sortby=mostrecent/xml?urlDesc=/customerreviews/page=1/id=840784742/sortBy=mostRecent/xml"/>
+    <link rel="previous"
+          href="https://itunes.apple.com/de/rss/customerreviews/page=1/id=840784742/sortby=mostrecent/xml?urlDesc=/customerreviews/page=1/id=840784742/sortBy=mostRecent/xml"/>
+    <link rel="next"
+          href="https://itunes.apple.com/de/rss/customerreviews/page=2/id=840784742/sortby=mostrecent/xml?urlDesc=/customerreviews/page=1/id=840784742/sortBy=mostRecent/xml"/>
+    <icon>http://itunes.apple.com/favicon.ico</icon>
     <author>
-        <name>Z0mb4y</name>
-        <uri>https://itunes.apple.com/de/reviews/id189318473</uri>
+        <name>iTunes Store</name>
+        <uri>http://www.apple.com/de/itunes/</uri>
     </author>
-    <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&amp;type=Purple%20Software"/>
-    <content type="html">&lt;table border="0" width="100%"&gt;\n    &lt;tr&gt;\n        &lt;td&gt;\n            &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt;\n                &lt;tr valign="top" align="left"&gt;\n                    \n                    \n                    \t&lt;td width="100%"&gt;\n                    \n                        &lt;b&gt;&lt;a href="https://apps.apple.com/de/app/movist/id840784742?uo=2"&gt;Not Loading Images Correctly&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;\n                        \n                        \n                        \n                        \n\n                        \n\n                       &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt;\n\t\t\t\t\t\t\n                        &lt;/font&gt;\n                    &lt;/td&gt;\n                &lt;/tr&gt;\n            &lt;/table&gt;\n        &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;\n            \n                &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt;&lt;br/&gt;Movist hasn&amp;#39;t been able to load images correctly for years now and the app is very slow. Pretty bad for an app that cots 3&#8364;.&lt;/font&gt;&lt;br/&gt;\n            \n            \n            \n        &lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n</content>
-</entry>
+    <rights>Copyright 2008 Apple Inc.</rights>
+    <entry>
+        <updated>2020-02-24T00:36:23-07:00</updated>
+        <id>5573352068</id>
+        <title>Very nice UX for keeping movies!</title>
+        <content type="text">
+            So first time I got the app I really enjoyed it. There was a slight bug issue, but the team worked on it and
+            fixed it! has awesome features and a cool UI to keep movies. I have both Imdb and Movist, and this one takes
+            the cake when it comes down to visuals and simplicity. Good job
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.16.3</im:version>
+        <author>
+            <name>Praetorian0101</name>
+            <uri>https://itunes.apple.com/de/reviews/id224637925</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Very nice UX for
+                                            keeping movies!
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>So first time I got the
+                            app I really enjoyed it. There was a slight bug issue, but the team worked on it and fixed
+                            it! has awesome features and a cool UI to keep movies. I have both Imdb and Movist, and this
+                            one takes the cake when it comes down to visuals and simplicity. Good job
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2019-06-19T05:27:50-07:00</updated>
+        <id>4338606340</id>
+        <title>Filme wieder im Gesehen Tab …</title>
+        <content type="text">…sehr gut. Dafür Stürzt die App in Gesehen ab.</content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>3</im:rating>
+        <im:version>1.16</im:version>
+        <author>
+            <name>Frank B74</name>
+            <uri>https://itunes.apple.com/de/reviews/id29789093</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Filme wieder im
+                                            Gesehen Tab …
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>…sehr gut. Dafür Stürzt
+                            die App in Gesehen ab.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2018-06-30T04:25:26-07:00</updated>
+        <id>2803443212</id>
+        <title>Unzuverlässig</title>
+        <content type="text">
+            An sich eine gute App! Jedoch werden teilweise gesehene Filme wieder aus der Liste geschmissen oder Filme
+            welche man zur Watchlist hinzugefügt hat werden dann doch nicht hinzugefügt! Absolut unzuverlässig, es
+            gleicht eher einem Glücksspiel ob etwas abgespeichert wird oder nicht. Dann doch lieber zurück zu Imdb. Hier
+            sollten erstmal die Bugs gefixed werden, bevor man Geld für so eine App verlangt!
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>1</im:rating>
+        <im:version>1.15</im:version>
+        <author>
+            <name>Kleptox</name>
+            <uri>https://itunes.apple.com/de/reviews/id459519763</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Unzuverlässig
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>An sich eine gute App!
+                            <br/>Jedoch werden teilweise gesehene Filme wieder aus der Liste geschmissen oder Filme
+                            welche man zur Watchlist hinzugefügt hat werden dann doch nicht hinzugefügt! Absolut
+                            unzuverlässig, es gleicht eher einem Glücksspiel ob etwas abgespeichert wird oder nicht.
+                            Dann doch lieber zurück zu Imdb. Hier sollten erstmal die Bugs gefixed werden, bevor man
+                            Geld für so eine App verlangt!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-09-17T03:26:20-07:00</updated>
+        <id>1794324639</id>
+        <title>Not Loading Images Correctly</title>
+        <content type="text">
+            Movist hasn't been able to load images correctly for years now and the app is very slow. Pretty bad for an
+            app that cots 3€.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>1</im:rating>
+        <im:version>1.13.5</im:version>
+        <author>
+            <name>Z0mb4y</name>
+            <uri>https://itunes.apple.com/de/reviews/id189318473</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Not Loading
+                                            Images Correctly
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Movist hasn&#39;t been
+                            able to load images correctly for years now and the app is very slow. Pretty bad for an app
+                            that cots 3€.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-15T16:24:55-07:00</updated>
+        <id>1565186086</id>
+        <title>Great App!</title>
+        <content type="text">
+            Found what I've been searching for a long time. Also recognizes german titles, really hope this app gains
+            more popularity!
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.13.3</im:version>
+        <author>
+            <name>BlastingAgents</name>
+            <uri>https://itunes.apple.com/de/reviews/id171266710</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Great App!</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Found what I&#39;ve been
+                            searching for a long time. Also recognizes german titles, really hope this app gains more
+                            popularity!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-01-14T13:17:26-07:00</updated>
+        <id>1522201989</id>
+        <title>Fast perfekt..</title>
+        <content type="text">
+            Ich habe mir die App im Bundle mit Serist gekauft. Ich finde die App an sich Klasse bis auf einige Punkte.
+            1. App nicht auf deutsch verfügbar. Serist jedoch schon. Wäre schön, wenn es in nächster Zeit auch eine
+            deutsche Version geben würde. 2. App Design nicht so ansprechend wie Serist. Ich fände es gut, wenn die App
+            ähnlicher zu Serist aufgebaut werden würde. 3. CheckIn-Status nicht vorhanden. Auch hier wäre es toll wenn
+            man wie bei Serist einen Menüpunkt für den CheckIn hat um den Fortschritt tracken zu können. 4. Rate
+            Reminder funktioniert nicht?! Notification Einstellungen sind jedoch korrekt. Finde den Rate Reminder echt
+            eine tolle Idee, nur bekomme ich keine Benachrichtigung nachdem ich einen Film gesehen habe. 5. Film
+            Beschreibungen auf deutsch anzeigen wäre bei einer deutschen Version auch nett!
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>4</im:rating>
+        <im:version>1.13.2</im:version>
+        <author>
+            <name>RaiZeX</name>
+            <uri>https://itunes.apple.com/de/reviews/id117453743</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Fast perfekt..
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Ich habe mir die App im
+                            Bundle mit Serist gekauft. Ich finde die App an sich Klasse bis auf einige Punkte.
+                            <br/>
+                            <br/>1. App nicht auf deutsch verfügbar. Serist jedoch schon. Wäre schön, wenn es in
+                            nächster Zeit auch eine deutsche Version geben würde.
+                            <br/>
+                            <br/>2. App Design nicht so ansprechend wie Serist. Ich fände es gut, wenn die App ähnlicher
+                            zu Serist aufgebaut werden würde.
+                            <br/>
+                            <br/>3. CheckIn-Status nicht vorhanden. Auch hier wäre es toll wenn man wie bei Serist einen
+                            Menüpunkt für den CheckIn hat um den Fortschritt tracken zu können.
+                            <br/>
+                            <br/>4. Rate Reminder funktioniert nicht?! Notification Einstellungen sind jedoch korrekt.
+                            Finde den Rate Reminder echt eine tolle Idee, nur bekomme ich keine Benachrichtigung nachdem
+                            ich einen Film gesehen habe.
+                            <br/>
+                            <br/>5. Film Beschreibungen auf deutsch anzeigen wäre bei einer deutschen Version auch nett!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2016-09-21T23:56:17-07:00</updated>
+        <id>1453805182</id>
+        <title>Very good, needs an Update</title>
+        <content type="text">
+            I bought Serist and Movist and I think these are good Apps, but could you please optimize Movist for the
+            Screen of the big iPad Pro? For Serist, it's already the case.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>3</im:rating>
+        <im:version>1.12.1</im:version>
+        <author>
+            <name>royalbaer</name>
+            <uri>https://itunes.apple.com/de/reviews/id343740705</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Very good, needs
+                                            an Update
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>I bought Serist and
+                            Movist and I think these are good Apps, but could you please optimize Movist for the Screen
+                            of the big iPad Pro? For Serist, it&#39;s already the case.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-11-17T23:33:17-07:00</updated>
+        <id>1288167006</id>
+        <title>perfekt</title>
+        <content type="text">
+            In meinen Augen die perfekte App, um seine Film(wünsch)e zu verwalten. Anbindung an trakt.tv läuft ohne
+            Probleme.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.11.1</im:version>
+        <author>
+            <name>racemase</name>
+            <uri>https://itunes.apple.com/de/reviews/id30317271</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">perfekt</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>In meinen Augen die
+                            perfekte App, um seine Film(wünsch)e zu verwalten. Anbindung an trakt.tv läuft ohne
+                            Probleme.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-10-04T11:39:19-07:00</updated>
+        <id>1266988303</id>
+        <title>Very nice movie-tracking app</title>
+        <content type="text">
+            Movist is a great to keep your movie collection, wishlist and ratings in a central place. The design is
+            intuitive and offers details for nearly every movie. I also like the trakt.tv syncronisation so I can edit
+            my collection on another device. I would love to see support for TV-Shows in future updates.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>4</im:rating>
+        <im:version>1.10.1</im:version>
+        <author>
+            <name>⭐️The Chosen One⭐️</name>
+            <uri>https://itunes.apple.com/de/reviews/id230229155</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Very nice
+                                            movie-tracking app
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Movist is a great to
+                            keep your movie collection, wishlist and ratings in a central place. The design is intuitive
+                            and offers details for nearly every movie. I also like the trakt.tv syncronisation so I can
+                            edit my collection on another device.<br/>I would love to see support for TV-Shows in future
+                            updates.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-10-04T03:12:32-07:00</updated>
+        <id>1266776415</id>
+        <title>Top!</title>
+        <content type="text">Always up-to-date!</content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.10.1</im:version>
+        <author>
+            <name>TobyKoch</name>
+            <uri>https://itunes.apple.com/de/reviews/id11132982</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Top!</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Always up-to-date!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-09-30T14:05:48-07:00</updated>
+        <id>1265049955</id>
+        <title>Super App</title>
+        <content type="text">
+            Ausgezeichnet für Leute die viele Filme sehen und oder Filme sammeln. Dank der Synchronisation gehen auch
+            bei Geräteproblemen keine Daten verloren. Man findet so gut wie jeden Film und die App ist sehr
+            übersichtlich. Extra Pluspunkt für das sehr schöne UI.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.10</im:version>
+        <author>
+            <name>Devil0s</name>
+            <uri>https://itunes.apple.com/de/reviews/id103362379</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Super App</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Ausgezeichnet für Leute
+                            die viele Filme sehen und oder Filme sammeln. Dank der Synchronisation gehen auch bei
+                            Geräteproblemen keine Daten verloren.<br/>Man findet so gut wie jeden Film und die App ist
+                            sehr übersichtlich.<br/>Extra Pluspunkt für das sehr schöne UI.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-09-29T08:22:50-07:00</updated>
+        <id>1264498720</id>
+        <title>Sehr gut.</title>
+        <content type="text">Ehrlich, sehr gut!</content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>4</im:rating>
+        <im:version>1.10</im:version>
+        <author>
+            <name>Tasse93</name>
+            <uri>https://itunes.apple.com/de/reviews/id116430464</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Sehr gut.</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Ehrlich, sehr gut!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-06-15T14:04:00-07:00</updated>
+        <id>1212886072</id>
+        <title>Crap mostly</title>
+        <content type="text">
+            Adding movies to your own collection by scanning requires waaay too many steps. Very annoying. On the Watch,
+            I expected to be able to access my watch list. But "Trending" is all you get, which is pretty useless. I
+            regret buying this app.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>2</im:rating>
+        <im:version>1.9</im:version>
+        <author>
+            <name>mmbf23</name>
+            <uri>https://itunes.apple.com/de/reviews/id138341985</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Crap mostly</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Adding movies to your
+                            own collection by scanning requires waaay too many steps. Very annoying.
+                            <br/>
+                            <br/>On the Watch, I expected to be able to access my watch list. But &#34;Trending&#34; is
+                            all you get, which is pretty useless.
+                            <br/>
+                            <br/>I regret buying this app.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-05-01T15:54:13-07:00</updated>
+        <id>1190904322</id>
+        <title>If it would be working...</title>
+        <content type="text">
+            Very good idea to keep track of all your movies. Its nicely designed and looks really good. Unfortunately
+            the search function is not working (error -1011) so the app is mostly useless : ( Hope this will be fixed.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>2</im:rating>
+        <im:version>1.8</im:version>
+        <author>
+            <name>Dai361</name>
+            <uri>https://itunes.apple.com/de/reviews/id144250338</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">If it would be
+                                            working...
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Very good idea to keep
+                            track of all your movies. Its nicely designed and looks really good. Unfortunately the
+                            search function is not working (error -1011) so the app is mostly useless : (<br/>Hope this
+                            will be fixed.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-04-23T07:13:15-07:00</updated>
+        <id>1186858261</id>
+        <title>Language pack</title>
+        <content type="text">
+            A German version would ne good. Otherwise, everthing is good.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>3</im:rating>
+        <im:version>1.8</im:version>
+        <author>
+            <name>Prob12</name>
+            <uri>https://itunes.apple.com/de/reviews/id179489952</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Language pack
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>A German version would
+                            ne good.<br/>Otherwise, everthing is good.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-02-19T23:32:43-07:00</updated>
+        <id>1154247316</id>
+        <title>Sehr gut</title>
+        <content type="text">
+            Für mich die beste Film-App. Tolles Design, umfangreiche Funktionen und häufige Updates um auf Anpassungen
+            zu reagieren. Die Synchronisation mit Trakt läuft absolut glatt – nur die Suche könnte noch etwas besser
+            sein und etwas flexibler auf Eingaben reagieren, sodass der Titel nicht exakt richtig eingegeben werden
+            müssen.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.6.1</im:version>
+        <author>
+            <name>nikou 07</name>
+            <uri>https://itunes.apple.com/de/reviews/id12603467</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Sehr gut</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Für mich die beste
+                            Film-App. Tolles Design, umfangreiche Funktionen und häufige Updates um auf Anpassungen zu
+                            reagieren. Die Synchronisation mit Trakt läuft absolut glatt – nur die Suche könnte noch
+                            etwas besser sein und etwas flexibler auf Eingaben reagieren, sodass der Titel nicht exakt
+                            richtig eingegeben werden müssen.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-01-24T03:38:02-07:00</updated>
+        <id>1135240395</id>
+        <title>Kein Scanner??!!</title>
+        <content type="text">
+            Es gibt keinen Strichcode-Scanner!! Soll ich 300 Filme über die schlechte Suchfunktion eingeben? Bitte
+            schleunigst nachrüsten!!
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>1</im:rating>
+        <im:version>1.5.1</im:version>
+        <author>
+            <name>MatthiasCR</name>
+            <uri>https://itunes.apple.com/de/reviews/id33025789</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Kein
+                                            Scanner??!!
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Es gibt keinen
+                            Strichcode-Scanner!! Soll ich 300 Filme über die schlechte Suchfunktion eingeben?<br/>Bitte
+                            schleunigst nachrüsten!!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2015-01-23T11:03:46-07:00</updated>
+        <id>1134869944</id>
+        <title>Naja</title>
+        <content type="text">
+            Sieht gut aus, und App an sich funktioniert. Die Suche ist aber sehr streng und findet den Film oft nur wenn
+            man den kompletten Titel eingibt. Vor allem weil nur englische Titel auffindbar sind, ist das doch eher
+            nervig. Schade auch, dass man nicht alle Filme eines Regisseurs oder Schauspielers anzeigen lassen kann.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>2</im:rating>
+        <im:version>1.5.1</im:version>
+        <author>
+            <name>Nasa8</name>
+            <uri>https://itunes.apple.com/de/reviews/id106522029</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Naja</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Sieht gut aus, und App
+                            an sich funktioniert. Die Suche ist aber sehr streng und findet den Film oft nur wenn man
+                            den kompletten Titel eingibt. Vor allem weil nur englische Titel auffindbar sind, ist das
+                            doch eher nervig. Schade auch, dass man nicht alle Filme eines Regisseurs oder Schauspielers
+                            anzeigen lassen kann.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-12-30T11:20:23-07:00</updated>
+        <id>1121845367</id>
+        <title>Great but buggy...</title>
+        <content type="text">
+            Many movie covers are not loading... An option to add images manually would be great!
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>3</im:rating>
+        <im:version>1.5</im:version>
+        <author>
+            <name>Rolando.PT</name>
+            <uri>https://itunes.apple.com/de/reviews/id417075368</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Great but
+                                            buggy...
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Many movie covers are
+                            not loading... An option to add images manually would be great!
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-12-30T07:29:12-07:00</updated>
+        <id>1121751811</id>
+        <title>Nice</title>
+        <content type="text">
+            Super App, um den Überblick über seine Filmsammlung nicht zu verlieren. Genau das, was ich brauche :D
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.4.1</im:version>
+        <author>
+            <name>KiiroSora</name>
+            <uri>https://itunes.apple.com/de/reviews/id111838821</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Nice</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Super App, um den
+                            Überblick über seine Filmsammlung nicht zu verlieren. Genau das, was ich brauche :D
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-12-30T03:14:07-07:00</updated>
+        <id>1121647753</id>
+        <title>Best movie app</title>
+        <content type="text">Trakt 👍 No rating popup 👍</content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>5</im:rating>
+        <im:version>1.5</im:version>
+        <author>
+            <name>SirFlashback</name>
+            <uri>https://itunes.apple.com/de/reviews/id17095342</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Best movie app
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Trakt 👍<br/>No rating
+                            popup 👍
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-11-28T13:45:27-07:00</updated>
+        <id>1104810033</id>
+        <title>App funktioniert nicht</title>
+        <content type="text">
+            Keine Verbindung, später versuchen. Somit lassen sich keine Filme hinzufügen. Nutzlose App.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>1</im:rating>
+        <im:version>1.4.1</im:version>
+        <author>
+            <name>Conber</name>
+            <uri>https://itunes.apple.com/de/reviews/id164498515</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">App funktioniert
+                                            nicht
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Keine Verbindung, später
+                            versuchen.<br/>Somit lassen sich keine Filme hinzufügen. Nutzlose App.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-11-19T12:23:25-07:00</updated>
+        <id>1099673594</id>
+        <title>trakt.tv Integration funktioniert nicht</title>
+        <content type="text">
+            Die App synchronisiert nicht mit trakt.tv, obwohl man angemeldet ist. Ansonsten bietet die App kaum
+            Funktionalität und ist sehr spartanisch. Das Design ist ansprechend, bringt ohne Funktionalität aber nicht
+            viel.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>1</im:rating>
+        <im:version>1.4.1</im:version>
+        <author>
+            <name>bug_raf_now</name>
+            <uri>https://itunes.apple.com/de/reviews/id35692187</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">trakt.tv
+                                            Integration funktioniert nicht
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Die App synchronisiert
+                            nicht mit trakt.tv, obwohl man angemeldet ist. Ansonsten bietet die App kaum Funktionalität
+                            und ist sehr spartanisch.
+                            <br/>
+                            <br/>Das Design ist ansprechend, bringt ohne Funktionalität aber nicht viel.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-08-11T09:05:51-07:00</updated>
+        <id>1044779236</id>
+        <title>Befriedigend</title>
+        <content type="text">
+            Nichts weiter als eine Liste. Simpel und intuitiv. Mit IMDB gut verlinkt. Leider mehrmals unerwartet
+            beendet. Keine Backup Funktion. "Tasten" zu klein geraten, sodass beim Klick auf die Wunschliste ich immer
+            ungewollt in der Suchmaske lande. Nur alphabetische Sortierung. Muss noch viel nachgebessert werden.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>2</im:rating>
+        <im:version>1.3</im:version>
+        <author>
+            <name>Reptile 25</name>
+            <uri>https://itunes.apple.com/de/reviews/id338610138</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Befriedigend</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Nichts weiter als eine
+                            Liste. Simpel und intuitiv. Mit IMDB gut verlinkt. Leider mehrmals unerwartet beendet. Keine
+                            Backup Funktion. &#34;Tasten&#34; zu klein geraten, sodass beim Klick auf die Wunschliste
+                            ich immer ungewollt in der Suchmaske lande. Nur alphabetische Sortierung. Muss noch viel
+                            nachgebessert werden.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-08-07T03:04:03-07:00</updated>
+        <id>1042177067</id>
+        <title>Wozu?</title>
+        <content type="text">
+            Ich hab mal aus Spaß 4 Filme hinzugefügt. Das hat auch nur knapp drei Minuten gedauert, aber nun die Frage:
+            was nun? Denn das scheint auch schon alles zu sein was die App kann
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>2</im:rating>
+        <im:version>1.3</im:version>
+        <author>
+            <name>elev364ft</name>
+            <uri>https://itunes.apple.com/de/reviews/id37075233</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Wozu?</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Ich hab mal aus Spaß 4
+                            Filme hinzugefügt. Das hat auch nur knapp drei Minuten gedauert, aber nun die Frage: was
+                            nun? Denn das scheint auch schon alles zu sein was die App kann
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-08-06T08:12:22-07:00</updated>
+        <id>1041758499</id>
+        <title>Sprache</title>
+        <content type="text">
+            Jetzt noch deutsch hinzufügen und alles ist perfekt ;)
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>4</im:rating>
+        <im:version>1.3</im:version>
+        <author>
+            <name>FAKEHD</name>
+            <uri>https://itunes.apple.com/de/reviews/id43706028</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Sprache</a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Jetzt noch deutsch
+                            hinzufügen und alles ist perfekt ;)
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2014-08-02T16:07:23-07:00</updated>
+        <id>1039583437</id>
+        <title>Macht was es soll - leider nicht mehr</title>
+        <content type="text">
+            Sieht gut aus, Sync mit trakt.tv funktioniert. Kennt keine deutschen Titel. Filme nicht nach Jahren
+            auffindbar oder z.B. nach Schauspielern.
+        </content>
+        <im:contentType term="Application" label="Programm"/>
+        <im:voteSum>0</im:voteSum>
+        <im:voteCount>0</im:voteCount>
+        <im:rating>3</im:rating>
+        <im:version>1.2</im:version>
+        <author>
+            <name>der_initiator</name>
+            <uri>https://itunes.apple.com/de/reviews/id85293918</uri>
+        </author>
+        <link rel="related" href="https://itunes.apple.com/de/review?id=840784742&type=Purple%20Software"/>
+        <content type="html">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                            <tr valign="top" align="left">
+                                <td width="100%">
+                                    <b>
+                                        <a href="https://apps.apple.com/de/app/movist/id840784742?uo=2">Macht was es
+                                            soll - leider nicht mehr
+                                        </a>
+                                    </b>
+                                    <br/>
+                                    <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>Sieht gut aus, Sync mit
+                            trakt.tv funktioniert.<br/>Kennt keine deutschen Titel. Filme nicht nach Jahren auffindbar
+                            oder z.B. nach Schauspielern.
+                        </font>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </content>
+    </entry>
+</feed>

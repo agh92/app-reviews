@@ -24,7 +24,7 @@ Open to suggestions
 - [ ] Documentation
 - [ ] Tests
 - [ ] Examples
-- [ ] Find App Ids
+- [ ] Find App Ids from name
 
 ### Dependencies
 The functionality of this module is dependent of the existence and the
