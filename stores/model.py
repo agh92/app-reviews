@@ -1,7 +1,7 @@
 import json
 from abc import ABC, abstractmethod
 
-from rx import Observable
+from rx.core.typing import Observable
 
 
 class App(ABC):

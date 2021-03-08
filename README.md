@@ -9,9 +9,12 @@ Inspired by:
  - [google-play-scraper ](https://github.com/facundoolano/google-play-scraper)
 
 # How to get AppStore ID
- -  Search in the desired app https://apps.apple.com and extract the id from the las part of the id. For example for WhatsApp: https://apps.apple.com/us/app/whatsapp-messenger/id310633997. The id is 310633997. 
+ -  Search in the desired app https://apps.apple.com 
+ -  Extract the id from the las part of the id. For example for WhatsApp: https://apps.apple.com/us/app/whatsapp-messenger/id310633997. The id is 310633997. 
 
 # How to get GooglePlay ID
+-  Search in the desired app https://play.google.com/store/apps
+-  Extract the id from the las part of the id. For example for Instagram: https://play.google.com/store/apps/details?id=com.instagram.android. The id is com.instagram.android.
 
 # Contribute
 Want to contribute? :clap: Just fork and make a PR :thumbsup:

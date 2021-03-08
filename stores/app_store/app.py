@@ -2,10 +2,8 @@ from typing import Optional
 
 import feedparser
 import rx
-from rx import operators as ops, Observable
-from rx.core import Observer
-from rx.disposable import Disposable
-from rx.scheduler.scheduler import Scheduler
+from rx import operators as ops
+from rx.core.typing import Disposable, Observer, Scheduler, Observable
 
 from stores.model import App
 from stores.app_store.review import AppStoreReview
@@ -21,7 +19,6 @@ class AppStoreApp(App):
     def __init__(self, app_id: str, country_code: str):
         self._app_id = app_id
         self._country_code = country_code
-        self._reviews = rx.create(self._fetch)
 
     @property
     def app_id(self) -> str:
@@ -33,7 +30,7 @@ class AppStoreApp(App):
 
     @property
     def reviews(self) -> Observable:
-        return self._reviews
+        return rx.create(self._fetch)
 
     def _fetch(self, observer: Observer, scheduler: Optional[Scheduler]) -> Disposable:
         # TODO just use 1 and then switchMap or similar to use the feed links
