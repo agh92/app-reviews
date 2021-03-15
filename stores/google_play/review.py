@@ -1,5 +1,3 @@
-import json
-
 import pyquery
 
 from stores.model import Review
@@ -27,7 +25,7 @@ class GooglePlayReview(Review):
         header = div("div.review-header").eq(0)
         review_info = header("div.review-info").eq(0)
         review_body = div("div.review-body").eq(0)
-        # TODO follow permalink and get the full review
+        # TODO follow permalink and get the full review ?
         if review_body("div.review-link").eq(0).attr("style") == "display:none":
             review_body.remove("div.review-link")
         return GooglePlayReview(
@@ -49,12 +47,15 @@ class GooglePlayReview(Review):
             app_id=app_id,
             review_id=gp_json[0],
             author=gp_json[1][0],
-            date=gp_json[5][0],  # TODO calculate date from both items in array
+            # TODO calculate date from both items in array
+            date=gp_json[5][0],
             perma_link="{}/store/apps/details?id={}&reviewId={}".format(
                 base_url, app_id, gp_json[0]
             ),
             stars=gp_json[2],
-            title=None,  # there is no title in this data structure
+            # there is no title in this data structure
+            title=None,
             body=gp_json[4],
-            raw=None,  # json.dump(gp_json),
+            # TODO add json.dump(gp_json),
+            raw=None,
         )
